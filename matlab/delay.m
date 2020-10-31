@@ -7,7 +7,7 @@ attenuate = 0.5;
 
 delaySample = round(delayTime * Fs); 
 wet = attenuate * [zeros(delaySample, 1); y];
-for i=2:feedback
+for i = 2 : feedback
     currentWet = power(attenuate, i) * [zeros(delaySample, 1); wet];
     wet = [wet; zeros(delaySample, 1)];
     wet = wet + currentWet;
