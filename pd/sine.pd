@@ -1,7 +1,14 @@
-#N canvas 692 733 853 702 24;
+#N canvas 2044 1175 853 702 24;
 #X obj 175 73 osc~ 440;
-#X obj 173 175 *~ 0.5;
-#X obj 143 323 dac~;
+#X obj 175 151 *~ 0.5;
+#X obj 154 394 dac~;
+#X obj 174 304 *~;
+#X obj 254 234 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 300 234 <-- Start/Stop;
+#X text 302 151 <-- Gain;
 #X connect 0 0 1 0;
-#X connect 1 0 2 0;
-#X connect 1 0 2 1;
+#X connect 1 0 3 0;
+#X connect 3 0 2 0;
+#X connect 3 0 2 1;
+#X connect 4 0 3 1;
