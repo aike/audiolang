@@ -1,0 +1,6 @@
+
+d2 silence
+
+
+d2 $ s "sine" # delayfeedback "0.5" # delaytime "0.4" # delay "0.5" 
+d1 $ cps "0.3"
