@@ -1,0 +1,291 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
+   <PATCH nodename="D:\src\etc\audiolang\vvvv\delay.v4p" systemname="delay" filename="D:\src\etc\audiolang\vvvv\delay.v4p">
+   <BOUNDS type="Window" left="14880" top="8320" width="9000" height="9000">
+   </BOUNDS>
+   <NODE systemname="FileStream (DShow9)" nodename="FileStream (DShow9)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="1040" top="5820" width="1200" height="270">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Play" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Do Seek" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="2">
+   <BOUNDS type="Node" left="6850" top="4710" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6850" top="4710" width="800" height="240">
+   </BOUNDS>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="1" values="..\voice.wav">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output String" dstnodeid="0" dstpinname="Filename">
+   </LINK>
+   <NODE systemname="AudioOut (DShow9)" nodename="AudioOut (DShow9)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="1040" top="6200" width="810" height="270">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Delay (Animation)" nodename="Delay (Animation)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="2460" top="2520" width="900" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Time" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="13">
+   <BOUNDS type="Node" left="3020" top="1120" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3020" top="1120" width="800" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Delay Time|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Time">
+   </LINK>
+   <NODE systemname="FileStream (DShow9)" nodename="FileStream (DShow9)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="2510" top="5810" width="1200" height="270">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1" slicecount="1" values="file.avi">
+   </PIN>
+   <PIN pinname="Play" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Do Seek" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output String" dstnodeid="15" dstpinname="Filename">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Audio" dstnodeid="4" dstpinname="Audio">
+   </LINK>
+   <NODE systemname="AudioOut (DShow9)" nodename="AudioOut (DShow9)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="2500" top="6200" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Volume" visible="1" slicecount="1" values="-12">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Audio" dstnodeid="20" dstpinname="Audio">
+   </LINK>
+   <NODE systemname="FileStream (DShow9)" nodename="FileStream (DShow9)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="4060" top="5800" width="1200" height="270">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1" slicecount="1" values="file.avi">
+   </PIN>
+   <PIN pinname="Play" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Do Seek" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="AudioOut (DShow9)" nodename="AudioOut (DShow9)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="4050" top="6190" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Volume" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Audio" dstnodeid="22" dstpinname="Audio">
+   </LINK>
+   <NODE systemname="FileStream (DShow9)" nodename="FileStream (DShow9)" componentmode="Hidden" id="25">
+   <BOUNDS type="Node" left="5440" top="5800" width="1200" height="270">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1" slicecount="1" values="file.avi">
+   </PIN>
+   <PIN pinname="Play" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Do Seek" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="AudioOut (DShow9)" nodename="AudioOut (DShow9)" componentmode="Hidden" id="24">
+   <BOUNDS type="Node" left="5430" top="6190" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Volume" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="Audio" dstnodeid="24" dstpinname="Audio">
+   </LINK>
+   <NODE systemname="Delay (Animation)" nodename="Delay (Animation)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="2680" top="2960" width="900" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Time" visible="1" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="26" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Delay (Animation)" nodename="Delay (Animation)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="3060" top="3380" width="900" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Time" visible="1" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="Output" dstnodeid="27" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="26" dstpinname="Time">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="27" dstpinname="Time">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Output" dstnodeid="15" dstpinname="Play">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="Output" dstnodeid="23" dstpinname="Play">
+   </LINK>
+   <LINK srcnodeid="27" srcpinname="Output" dstnodeid="25" dstpinname="Play">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output String" dstnodeid="23" dstpinname="Filename">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output String" dstnodeid="25" dstpinname="Filename">
+   </LINK>
+   <PACK Name="addonpack" Version="40.0.0">
+   </PACK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="35">
+   <BOUNDS type="Node" left="5150" top="3150" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5150" top="3150" width="800" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="-6">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Real">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Wet Level|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="41">
+   <BOUNDS type="Node" left="5140" top="3840" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="41" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="41" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="42">
+   <BOUNDS type="Node" left="5680" top="4290" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="41" srcpinname="Output" dstnodeid="42" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="42" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="20" dstpinname="Volume">
+   </LINK>
+   <LINK srcnodeid="41" srcpinname="Output" dstnodeid="22" dstpinname="Volume">
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Output" dstnodeid="24" dstpinname="Volume">
+   </LINK>
+   <NODE systemname="Toggle (Animation)" nodename="Toggle (Animation)" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="1040" top="1320" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Inverse Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="45">
+   <BOUNDS type="Node" left="1700" top="2650" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1700" top="2650" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="46">
+   <BOUNDS type="Node" left="1030" top="1760" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1030" top="1760" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="43" srcpinname="Output" dstnodeid="46" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="47">
+   <BOUNDS type="Node" left="1040" top="620" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1040" top="620" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Play/Reset">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="43" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Play">
+   </LINK>
+   <LINK srcnodeid="45" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Do Seek">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="45" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Do Seek">
+   </LINK>
+   <LINK srcnodeid="45" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Do Seek">
+   </LINK>
+   <LINK srcnodeid="45" srcpinname="Y Output Value" dstnodeid="25" dstpinname="Do Seek">
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="Inverse Output" dstnodeid="45" dstpinname="Y Input Value">
+   </LINK>
+   </PATCH>
