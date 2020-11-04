@@ -24,7 +24,7 @@ https://betadocs.vvvv.org/topics/audio/index.html
 
 音声信号のエフェクトは基本的にできないので、複数のFileStreamに時間をずらしてbangを送ることでディレイ効果を実現してみました。
 
-![delay](images/dshow9_delay.png)
+![delay](dshow9_delay.png)
 
 
 ## Bassライブラリの場合
@@ -40,17 +40,17 @@ echoノードを使用した例。
 ディレイタイムの単位も不明です。20000にすると400msecくらいになります。上限値下限値も説明がありませんが、調べたところ1200～30000のようです。
 AudioOutはDShow9と同名ですが、BassライブラリのAudioOutは接続するinletの場所が異なることに注意してください。
 
-![bass_delay](images/bass_delay.png)
+![bass_delay](bass_delay.png)
 
 BassライブラリはVST2プラグインが使えるのでエフェクトは外部プラグインにまかせる方法もあります。
 （vvvvインストールフォルダ）\lib\nodes\vst\ にVST2 32bitプラグインファイルを置いておくと、プラグインの名前のノードが作成できるようになります。
 今回使用したディレイプラグインもDAWで使用したときと音が異なったり、パラメータ設定が音にうまく反映されなかったり相性の悪い部分がありました。
 
-![bass_delay_vst](images/bass_delay_vst.png)
+![bass_delay_vst](bass_delay_vst.png)
 
 インスペクターの赤丸の位置をチェックするとinletが追加されてパラメータを数値ノードから設定できるようになります。
 
-![bass_delay_vst](images/bass_delay_vst.png)
+![bass_delay_vst](bass_delay_vst.png)
 
 
 ## VAudioライブラリの場合
@@ -62,7 +62,7 @@ ASIO専用なのでオーディオインタフェースハードウェアを使�
 
 VAudioライブラリの場合、ファイル名で指定するのでプラグインはどこに置いてあってもかまいません。vvvvが64bitの場合プラグインも64bit VST2を指定します。
 
-![bass_vst_inlet](images/bass_vst_inlet.png)
+![bass_vst_inlet](bass_vst_inlet.png)
 
 
 # 感想
