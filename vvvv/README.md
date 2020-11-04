@@ -15,10 +15,9 @@ Windows専用。商用利用は有償。
 # 実装例
 
 vvvvでオーディオプログラミングするには、いろいろと注意点があります。
-オーディオライブラリにはDShow9/Bass/VAudioなどの系列があり、お互いに混ぜて使用することはできません。
-https://betadocs.vvvv.org/topics/audio/index.html
+オーディオライブラリにはDShow9/Bass/VAudioなどの系列があり、お互いに混ぜて使用することはできません( https://betadocs.vvvv.org/topics/audio/index.html )。
 
-## DShow9ライブラリの場合
+## DShow9ライブラリ
 
 デフォルトでインストールされています。32bit/64bitどちらでも使えます。提供されているノードが非常に少ないです。
 
@@ -27,14 +26,14 @@ https://betadocs.vvvv.org/topics/audio/index.html
 ![delay](dshow9_delay.png)
 
 
-## Bassライブラリの場合
+## Bassライブラリ
 
-addonpack( https://vvvv.org/downloads#addonpack )をインストールすることで使えるようになります。
-64bit版ライブラリが提供されておらず、32bit版vvvvでのみ使えます。( https://vvvv.org/documentation/missing-in-64bit-builds )
+addonpack( https://vvvv.org/downloads#addonpack )をインストールすることで使えるようになります。インストール方法はvvvvインストールフォルダ直下にaddonpackフォルダごとコピーします。  
+64bit版ライブラリが提供されておらず、32bit版vvvvでのみ使えます( https://vvvv.org/documentation/missing-in-64bit-builds )。
 各種エフェクトなどのノードが豊富です。
 32bit VST2プラグインが使えますが、ロードできなかったり正常に音が出ない相性の悪いプラグインも多いです。
 
-echoノードを使用した例。
+echoノードを使用した例。  
 フィードバックは1回のみ。Wetのみ取り出すことは不可。
 また、vvvvのオーディオグラフはループ構造を許可していないらしく、接続を工夫してフィードバックを作り出すことはできないようです。
 ディレイタイムの単位も不明です。20000にすると400msecくらいになります。上限値下限値も説明がありませんが、調べたところ1200～30000のようです。
@@ -50,19 +49,19 @@ BassライブラリはVST2プラグインが使えるのでエフェクトは外
 
 インスペクターの赤丸の位置をチェックするとinletが追加されてパラメータを数値ノードから設定できるようになります。
 
-![bass_delay_vst](bass_delay_vst.png)
+![bass_vst_inlet](bass_vst_inlet.png)
 
 
-## VAudioライブラリの場合
+## VAudioライブラリ
 
-VVVV.Audio pack( https://vvvv.org/contribution/vvvv.audio-pack-alpha )をインストールすることで使えるようになります。
+VVVV.Audio pack( https://vvvv.org/contribution/vvvv.audio-pack-alpha )をインストールすることで使えるようになります。インストール方法はvvvvインストールフォルダ直下にpacksフォルダごとコピーします。  
 32bit/64bitどちらでも使えます。
 ASIO専用なのでオーディオインタフェースハードウェアを使っていない場合、ASIO4ALLのインストールが別途必要になります。
-ノードは少ないですが、32bit/64bitVST2プラグインが安定して使用できます。
+ノードは少ないですが、32bit/64bit VST2プラグインが安定して使用できます。
 
 VAudioライブラリの場合、ファイル名で指定するのでプラグインはどこに置いてあってもかまいません。vvvvが64bitの場合プラグインも64bit VST2を指定します。
 
-![bass_vst_inlet](bass_vst_inlet.png)
+![vaudio_delay_vst](vaudio_delay_vst.png)
 
 
 # 感想
