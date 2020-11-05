@@ -33,8 +33,8 @@ process = os.osc(freq) * gain <: _,_;
 
 Faustにはwavファイルを読み込んで再生する機能はありません。
 今回は、ディレイフィルターを記述して、それをfaust2sndfileでコンパイルすることでwavファイル加工ツール「delay」を生成しています。
-delayに入力wavファイルを指定すると、それにディレイ効果をかけたwavファイルを出力します。
-また、このプログラムをWeb IDEやFaustLiveで実行すると、マイク入力した音声ストリームにディレイをかけてスピーカーで鳴らします。
+delayに入力wavファイルを指定すると、それにディレイ効果をかけたwavファイルを出力します。  
+faust2sndfileを使わずに、このプログラムをWeb IDEやFaustLiveでそのまま実行すると、マイク入力した音声ストリームにディレイをかけてスピーカーで鳴らします。
 
 ```faust
 // compile: faust2sndfile delay.dsp -double
