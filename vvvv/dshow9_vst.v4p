@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
-   <PATCH nodename="D:\src\etc\audiolang\vvvv\delay_vst_x86.v4p" systemname="delay_vst_x86" filename="D:\src\etc\audiolang\vvvv\delay_vst_x86.v4p">
-   <BOUNDS type="Window" left="21020" top="5520" width="9000" height="9000">
+   <PATCH nodename="D:\src\etc\audiolang\vvvv\dshow9_delay_vst.v4p" systemname="delay_vst_x86" filename="D:\src\etc\audiolang\vvvv\delay_vst_x86.v4p">
+   <BOUNDS type="Window" left="10940" top="9710" width="9040" height="8560">
    </BOUNDS>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="3">
    <BOUNDS type="Node" left="2880" top="3450" width="100" height="100">
@@ -58,24 +58,6 @@
    <PIN pinname="Audio" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE systemname="ValhallaFreqEcho (VST DShow9)" filename="%VVVV%\lib\nodes\vst\ValhallaFreqEcho.dll" nodename="ValhallaFreqEcho (VST DShow9)" componentmode="InAWindow" id="16">
-   <BOUNDS type="Node" left="1410" top="4140" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Audio Input" visible="1">
-   </PIN>
-   <PIN pinname="Audio Output" visible="1">
-   </PIN>
-   <PIN pinname="Enable" visible="1">
-   </PIN>
-   <BOUNDS type="Window" left="14450" top="11050" width="5520" height="3160">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="13" srcpinname="Audio" dstnodeid="16" dstpinname="Audio Input">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="Audio Output" dstnodeid="14" dstpinname="Audio">
-   </LINK>
-   <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="16" dstpinname="Enable">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="19" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="1400" top="870" width="480" height="480">
    </BOUNDS>
@@ -129,5 +111,23 @@
    <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="13" dstpinname="Play">
    </LINK>
    <LINK srcnodeid="19" srcpinname="Y Output Value" dstnodeid="13" dstpinname="Do Seek">
+   </LINK>
+   <NODE systemname="ValhallaFreqEcho (VST DShow9)" filename="%VVVV%\lib\nodes\vst\ValhallaFreqEcho.dll" nodename="ValhallaFreqEcho (VST DShow9)" componentmode="InAWindow" id="21">
+   <BOUNDS type="Node" left="1410" top="4140" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Audio Input" visible="1">
+   </PIN>
+   <PIN pinname="Audio Output" visible="1">
+   </PIN>
+   <PIN pinname="Enable" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="14080" top="14670" width="5520" height="3160">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="13" srcpinname="Audio" dstnodeid="21" dstpinname="Audio Input">
+   </LINK>
+   <LINK srcnodeid="21" srcpinname="Audio Output" dstnodeid="14" dstpinname="Audio">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="21" dstpinname="Enable">
    </LINK>
    </PATCH>
