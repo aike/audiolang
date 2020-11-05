@@ -5,8 +5,8 @@ Faust
 
 https://faust.grame.fr/
 
-サウンド合成、オーディオ処理用関数型プログラミング言語。
-オンラインコンパイラやマルチプラットフォームで動くFaustLive開発実行環境など。
+サウンド合成、オーディオ処理用関数型プログラミング言語(Functional-AUdio-STream)。
+Web IDEやマルチプラットフォームで動くFaustLive開発実行環境など。
 実行だけでなく、C++、C、Java、JavaScript、LLVM、WebAssemblyその他の言語やバイナリにコンパイルできるのが特徴。
 
 開発はGrame Research Lab(フランス)
@@ -16,8 +16,9 @@ https://faust.grame.fr/
 
 ## サイン波生成
 
-オンラインコンパイラ( https://faustide.grame.fr/ )やFaustLive( https://faust.grame.fr/downloads/#faustlive )で実行できます。Faustのライブラリはオシレーターならos、エフェクトならefといった名前でグループ化されています。
+Web IDE( https://faustide.grame.fr/ )やFaustLive( https://faust.grame.fr/downloads/#faustlive )で実行できます。Faustのライブラリはオシレーターならos、エフェクトならefといった名前でグループ化されています。
 元がモノラルなので<: _,_をつけて2chのステレオ音声にして出力しています。
+この例ではわかりにくいですが、Faustが扱うデータはサンプル単位です（つまりMaxでいうところのGen）。
 
 ```faust
 import("stdfaust.lib");
@@ -33,7 +34,7 @@ process = os.osc(freq) * gain <: _,_;
 Faustにはwavファイルを読み込んで再生する機能はありません。
 今回は、ディレイフィルターを記述して、それをfaust2sndfileでコンパイルすることでwavファイル加工ツール「delay」を生成しています。
 delayに入力wavファイルを指定すると、それにディレイ効果をかけたwavファイルを出力します。
-また、このプログラムをオンラインコンパイラやFaustLiveで実行すると、マイク入力した音声ストリームにディレイをかけてスピーカーで鳴らします。
+また、このプログラムをWeb IDEやFaustLiveで実行すると、マイク入力した音声ストリームにディレイをかけてスピーカーで鳴らします。
 
 ```faust
 // compile: faust2sndfile delay.dsp -double
@@ -59,5 +60,5 @@ Faustも主眼を置いているのは実行そのものではなくオーディ
 また、gitなどのバージョン管理が容易になり、ライブラリの再利用性も向上するため、オーディオプログラミングがこれまで以上に進化する鍵になりそうな気もします。  
 たとえ初見では黒魔術に見えたとしても。
 
-触った印象としては、オンラインコンパイラやFaustLiveも安定しているしfaust2sndfileも一発で実行ファイルを生成できて、完成度としては高く感じました。ドキュメントも充実しているので、今から学ぶには良い言語だと思います。
+触った印象としては、Web IDEやFaustLiveも安定しているしfaust2sndfileも一発で実行ファイルを生成できて、完成度としては高く感じました。ドキュメントも充実しているので、今から学ぶには良い言語だと思います。
 
