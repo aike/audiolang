@@ -25,9 +25,20 @@ play 69, attack: 0, attack_level: 1, decay: 0, sustain_level: 1, sustain: 2, rel
 
 カレントフォルダがSonic Piアプリフォルダになるので、ファイル操作は絶対パス指定が必要という点はちょっと注意が必要です。
 
-下の例では、音声ファイルを時間をずらして再生することで疑似的にディレイ効果を得ています。
+Echoエフェクトのディレイタイム指定phaseは1拍の長さに対する割合で指定します。0.4とした場合、BPM60なら0.4秒ですがBPM120なら0.2秒になります。
 
-要調査：Delayエフェクト
+```Ruby
+datapath = "/tmp/"
+file = datapath + "voice.wav"
+
+use_bpm 60
+
+with_fx :echo, phase: 0.4, mix: 0.5, decay: 5 do
+  sample file
+end
+```
+
+下の例では、音声ファイルを時間をずらして再生することで疑似的にディレイ効果を得ています。
 
 ```Ruby
 datapath = "/tmp/"
