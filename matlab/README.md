@@ -100,7 +100,7 @@ MATLABは本体とアドオンという形式で販売され、それぞれ毎�
 * Audio Toolbox（VST、ASIO、MIDIデバイス、機械学習）
 * Signal Processing Toolbox（信号解析、フィルター設計）
 
-今回の .m ファイルを実行するくらいであればアドオンは不要です。
+今回の .m ファイルを実行するくらいであればMATLAB本体だけでアドオンは不要です。
 今回のSimulinkファイルを実行するには、MATLAB、Simulink、DSP System Toolboxが必要です。
 
 どういった処理にどのアドオンが必要かはわかりづらいですが、公式Webに多くの情報が公開されているので根気よく読んでいけば判断することは可能です。
