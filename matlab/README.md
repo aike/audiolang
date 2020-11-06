@@ -62,6 +62,19 @@ sound(y,Fs);
 
 # Simulinkによる実装
 
+Simulinkによる実装は次のようになります。
+Simulinkのファイル形式は.slxです。以前は.mdlというテキストベースのファイル形式でしたが、2012年以降バイナリの.slx形式になりました。また、同名の.mファイルがあると.slxは保存できないようなので別の名前で保存する必要があります。
+
+## サイン波生成
+
+![sine_simulink](sine_simulink.png)
+要DSP System Toolbox
+
+## Delayエフェクト
+
+![delay_simulink](delay_simulink.png)
+要DSP System Toolbox
+
 
 # 感想
 
@@ -81,13 +94,14 @@ MATLABは、本体とアドオンという形式で販売され、それぞれ�
 ほしいものを一気に買って、必要であれば年次更新するのがおすすめです。
 
 オーディオ処理でおすすめのアドオンは以下のとおりです。
-・Simulink　（ビジュアルプログラミング・モデリング）
-・Audio Toolbox　（VST、ASIO、MIDIデバイス、機械学習）
-・Signal Processing Toolbox　（信号解析、フィルター設計）
-・DSP System Toolbox　（フィルター設計、ストリーミング処理）
+
+* Simulink　（ビジュアルプログラミング・モデリング）
+* DSP System Toolbox　（Simulink用オーディオ処理ライブラリ、フィルター設計、ストリーミング処理）
+* Audio Toolbox　（VST、ASIO、MIDIデバイス、機械学習）
+* Signal Processing Toolbox　（信号解析、フィルター設計）
 
 今回の .m ファイルを実行するくらいであればアドオンは不要です。
-今回のSimulinkファイルを実行するには、SimulinkとSignal Processing Toolboxが必要です。
+今回のSimulinkファイルを実行するには、MATLAB、Simulink、DSP System Toolboxが必要です。
 
 どういった処理にどのアドオンが必要かはわかりづらいですが、公式Webに多くの情報が公開されているので根気よく読んでいけば判断することは可能です。
 
