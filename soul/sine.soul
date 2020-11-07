@@ -1,0 +1,18 @@
+
+processor SineWave
+{
+    output stream float out;
+    float theta = 0;
+    float delta = float (440 * twoPi * processor.period);
+
+    void run()
+    {
+        loop
+        {
+            out << 0.1f * sin (theta);
+            theta = addModulo2Pi (theta, delta);
+            advance();
+        }
+    }
+}
+

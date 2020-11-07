@@ -11,42 +11,41 @@ RaspberryPiでも動く。
 
 ケンブリッジ大コンピュータ研究所のSam Aaron。
 
-# 特徴
+# 実装例
+
+## サイン波生成
+
+```Ruby
+use_synth :sine
+play 69, amp: 0.5, attack: 0, attack_level: 1, decay: 0, sustain_level: 1, sustain: 2, release: 0
+```
+
+## Delayエフェクト
+
+カレントフォルダがSonic Piアプリフォルダになるので、ファイル操作は絶対パス指定が必要という点はちょっと注意が必要です。
+
+with_fxブロックで囲むとその内側で鳴らす音すべてにエフェクトがかかる、という独特の文法です。
+Echoエフェクトのディレイタイム指定phaseは1拍の長さに対する割合で指定します。0.4とした場合、BPM60なら0.4秒ですがBPM120なら0.2秒になります。
+
+```Ruby
+datapath = "/tmp/"
+file = datapath + "voice.wav"
+
+use_bpm 60
+
+with_fx :echo, phase: 0.4, mix: 0.5, decay: 5 do
+  sample file
+end
+```
+
 
 # 感想
 
-SuperColliderやTidalCyclesに比べると、言語使用が音楽家にも理解しやすい。
-実行環境が良くできている。
-本来の言語仕様にシームレスに機能を追加しやすい、
-一見わかりやすく高度なこともできる、といったRuby言語の利点を生かしている。
+言語仕様は、SuperColliderなどに比べると本業プログラマーではないアーティストにも理解しやすいわかりやすさがあります。
 
+Ruby言語の利点である、シームレスに言語を拡張しやすい、一見わかりやすく高度なこともできる、といった特徴を生かしている印象です。
+プログラミング言語の技術やパラダイムに詳しい技術者が、誰にでも扱いやすい平易な言語を設計することは意外と少なく、そういう点でSonic Piは独自の位置を築いているように思います。
+Rubyのライブラリという形ではなく実行環境一体型にしてインストールも簡単、実行画面もシンプルでチュートリアルや言語マニュアルもすべて同じ画面で見られるようにしているあたり、ハードルを下げるための思想が一貫しているように感じます。
 
-# 実装
-
-```sine.rb
-use_synth :sine
-play 69, attack: 0, attack_level: 1, decay: 0, sustain_level: 1, sustain: 2, release: 0
-
-```
-
-
-カレントフォルダがSonic Pi実行ファイルの場所になるので、ファイル操作は絶対パス指定が必要という点はちょっと注意が必要。
-
-```
-datapath = "/tmp/"
-
-file = datapath + "voice.wav"
-sampleTime = sample_duration(file)
-delayTime = 0.4
-attenuate = 0.5
-sample file
-(sampleTime/delayTime).times do
-  sleep delayTime
-  sample file, amp: attenuate
-  attenuate *= attenuate
-end
-
-```
-
-
+ただし、Sonic Piの目的はあくまでライブコーディングであり、サンプルレベルの音声信号の生成や加工といった目的には向いていません。
 
