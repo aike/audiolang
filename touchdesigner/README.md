@@ -26,17 +26,17 @@ CHOP Delayノードは音声信号を遅らせるだけでフィードバック�
 
 wavファイル再生はAudio File In、そこからディレイ用に分岐した音声を下段のMathノード(Mix1)につなぎます。後続のTrailノードが遅延用に信号を記憶するバッファです。  
 
-フィードバックディレイは本来Trailが想定している使い方とは異なるらしく、バッファをLookupノードで読むには少し工夫が必要になります。どこからどこまでどのようにという情報をPatternノードをType:Ramp、Sample Rate:44100、Length:735、Amplitude:735として与えてやります。LookupのWindow LengthはTrailのデフォルトバッファサイズである176400、Index Rangeを0～176400とします。(176400 = 44100 * 4、4秒)  
+フィードバックディレイは本来Trailが想定している使い方とは異なるらしく、バッファをLookupノードで読むには少し工夫が必要になります。どこからどこまでどのようにという情報をPatternノードで与えてやります（Type:Ramp、Sample Rate:44100、Length:735、Amplitude:735）。LookupのWindow LengthはTrailのデフォルトバッファサイズである176400、Index Rangeを0～176400とします。(176400 = 44100 * 4、つまり4秒)  
 後続のFeedbackはOutput:Previous Channels at Current Timeとします。
 
 ここからが理解しづらいのですが、その後ろに何も設定しないAudio Para EQを接続しています。これを接続しないと正常な音になりません。一旦正常な音が出たら外してもかまいません。今回は説明用に外さずにそのままにしてあります。  
 
-中段のMathはFeedback Levelで、プロパティから0.5をかけて入力側に戻しています。TouchDesignerのフィードバックループは、接続やパラメータを間違えると不安定になることもあるので注意して接続してください。  
-下段のMathはWet Levelで、こちらもプロパティから0.5をかけています。
+中段右のMathはFeedback Levelで、プロパティから0.5倍して入力側に戻しています。TouchDesignerのフィードバックループは、接続やパラメータを間違えると不安定になることもあるので注意して接続してください。  
+下段のMathはWet Levelで、こちらもプロパティから0.5倍しています。
 
-中段左のConstant(DelayTime)はディレイタイム設定用です。右隣のMath(Sec2Sample)で44100をかけてサンプル数にして、さらに右隣のNullからExpressionでPetternのOffsetにつないで制御します。
+中段左のConstant(DelayTime)はディレイタイム設定用です。右隣のMath(Sec2Sample)で44100をかけてサンプル数にして、さらに右隣のNullからExpressionでPetternのOffsetにつないで制御できるようにしています。
 
-Wet Levelの出力を上段のMathでDryとミックスすれば完成です。
+右下のWet Levelの出力を上段のMathでDryとミックスすれば完成です。
 
 ![delay](delay.png)
 
