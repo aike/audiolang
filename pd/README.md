@@ -19,9 +19,9 @@ Maxの原型の開発者でもあるMiller Pucketteが1990年代に開発。
 
 ## Delayエフェクト
 
-wavファイル再生はreadsf~にopenメッセージを送ります。
-ディレイはdelwrite~でバッファ書き込み、delread~でバッファ読み込み。
-*~で音量調整、+~でミックス。
+wavファイル再生はreadsf\~にopenメッセージを送ります。
+ディレイはdelwrite\~でバッファ書き込み、delread\~でバッファ読み込み。
+*\~で音量調整、+\~でミックス。
 
 ![delay](delay.png)
 
