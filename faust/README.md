@@ -9,7 +9,7 @@ https://faust.grame.fr/
 Web IDEやマルチプラットフォームで動くFaustLive開発実行環境など。
 実行だけでなく、C++、C、Java、JavaScript、LLVM、WebAssemblyその他の言語やバイナリにコンパイルできるのが特徴。
 
-開発はGrame Research Lab(フランス)
+開発はGRAME(フランス国立音楽創造センター)
 
 
 # 実装例
