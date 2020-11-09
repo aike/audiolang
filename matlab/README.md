@@ -10,8 +10,9 @@ https://jp.mathworks.com/products/matlab.html
 各種Toolboxアドオンが用意されている。
 Simulinkというグラフィカルモデリングツール（ビジュアル言語）もアドオンとして用意されている。
 
-開発はMathWorks。
+現在の開発はMathWorks（米国）。
 
+1970年代、ニューメキシコ大学のCleve MolerがFortranに代わる言語として開発。1984年にMathWorks社を設立して商用化。
 
 GNU Octave( https://www.gnu.org/software/octave/index )は、MATLABの基本言語部分のフリーソフトウェア版クローン。Simulink、Toolboxは含まれない。
 Scilab( https://www.scilab.org/ )は、MATLABに似たシンタックスを持つ言語だが互換性はない。
@@ -84,7 +85,7 @@ MATLABは歴史が長い分、最近のモダンな言語に慣れていると�
 
 ここで、MATLABの買い方についても少し触れておきます。
 
-MATLABは本体とアドオンという形式で販売され、それぞれ毎年更新されます。
+MATLABは本体とアドオンという形式で販売され、それぞれ毎年更新されます（ソフトウェアリリースは毎年2回、ライセンスは1年単位）。
 個人向けや学生向けは比較的買いやすい値段です。
 更新しなくても古いバージョンは使えるし、言語仕様自体が大きく変更されることはないと予想できるので、一度買ってそれを使い続けるということもできます。（この辺はWaves Audio社のプラグインと似てますね）
 
