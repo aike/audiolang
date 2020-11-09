@@ -1,5 +1,5 @@
-// faust2sndfile delay.dsp -double
-// ./delay ../voice.wav voice_processed.wav
+// compile: faust2sndfile delay.dsp
+// run: ./delay ../voice.wav voice_processed.wav
 
 import("stdfaust.lib");
 
