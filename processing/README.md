@@ -13,7 +13,7 @@ https://processing.org/
 
 # 実装例
 
-Processingのオーディオライブラリとしては、Minim( http://code.compartmental.net/minim/index.html )またはSound( https://processing.org/reference/libraries/sound/index.html )が使用されることが多いようです。Processing 2ではMinimが標準バンドルされていました。SoundはProcessing 3用にProcessing Foundationが開発した公式ライブラリです。どちらもスケッチメニューから追加インストールする必要があります。
+Processingのオーディオライブラリとしては、Minim( http://code.compartmental.net/minim/index.html )またはSound( https://processing.org/reference/libraries/sound/index.html )が使用されることが多いようです。Processing 2ではMinimが標準バンドルされていました。SoundはProcessing 3用にProcessing Foundationが開発した公式ライブラリです。どちらもスケッチメニューから追加インストールすることで使えるようになります。
 
 ## サイン波生成
 
@@ -45,8 +45,8 @@ void draw(){
 
 ### Soundライブラリの場合
 
-Soundライブラリもオシレーターはシンプルに書くことができます。
-初期化と同時に音を出すとノイズが乗るようなので500msec待ってからplay()を呼んでいます。
+Soundライブラリでのオシレーターは非常にシンプルに書くことができます。
+初期化と同時に音を出すとノイズが乗るようなので500msec待ってからplay()を呼ぶようにしました。
 
 ```Processing
 import processing.sound.*;
@@ -68,10 +68,10 @@ void draw() {
 
 ### Minimライブラリの場合
 
-MinimライブラリでもさらにMinim Core系列とUgen系列とに分かれる。
-単純なwavファイル再生の場合、Minim CoreのAudioPlayerを使用することもできるが、
-Ugenの方がエフェクトも充実し、オーディオグラフのルーティングも柔軟におこなえる。
-以下の例ではUgenを使用している。
+Minimライブラリは、さらにMinim Core系列とUGen系列とがあります。
+単純なwavファイル再生の場合、Minim CoreのAudioPlayerを使用することもできるますが、
+UGenの方がエフェクトも充実し、オーディオグラフのルーティングも柔軟におこなえるため、
+以下の例ではUGenを使用しています。
 
 ```Processing
 import ddf.minim.*;
@@ -108,7 +108,7 @@ void draw(){
 
 ### Soundライブラリの場合
 
-Soundライブラリはシンプルで扱いやすいですが、あまり複雑なことはできず、ディレイもDryとWet個別に調整することはできないようです。
+Soundライブラリはシンプルで扱いやすい一方で、あまり複雑なことはできず、ディレイもDryとWet個別に調整することはできないようです。
 
 ```Processing
 import processing.sound.*;
