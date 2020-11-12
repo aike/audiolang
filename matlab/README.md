@@ -14,7 +14,7 @@ Simulinkというグラフィカルモデリングツール（ビジュアル言
 
 1970年代、ニューメキシコ大学のCleve MolerがFortranに代わる言語として開発。1984年にMathWorks社を設立して商用化。
 
-GNU Octave( https://www.gnu.org/software/octave/index )は、MATLABの基本言語部分のフリーソフトウェア版クローン。Simulink、Toolboxは含まれない。
+GNU Octave( https://www.gnu.org/software/octave/index )は、MATLABの基本言語部分のフリーソフトウェア版クローン。
 Scilab( https://www.scilab.org/ )は、MATLABに似たシンタックスを持つ言語だが互換性はない。
 
 # 実装例
