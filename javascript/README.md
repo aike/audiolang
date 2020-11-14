@@ -55,11 +55,11 @@ index.htmlは以下の内容です。
 
 Web Audio APIでは、単機能のノードを生成して、connect()でつなげていくことでオーディオ処理を記述します。最終的にAudioContextオブジェクトのdestinationにconnect()すると音が出力されます。
 
-重要な注意点としてAutoplay Policyがあります。これはWebでは、ユーザのアクションなしに音声の自動再生を禁止するものです( https://developers.google.com/web/updates/2018/11/web-audio-autoplay )。
+重要な注意点としてAutoplay Policyがあります。これは、Webではユーザのアクションなしに音声の自動再生を禁止するというものです( https://developers.google.com/web/updates/2018/11/web-audio-autoplay )。
 そのため、onclickなどのユーザーアクションのコールバックとして音声処理を実装する必要があります。
 コールバックの先頭ではオーディオコンテキストをチェックして休止していたらresumeする処理を入れておきます。
 
-また、オシレータなどの発音ノードは一度start()してstop()したら再利用はできない点も注意が必要です。再び音を鳴らす場合はまた新しくOscillatorNodeを作る必要があります。これはかなり直観に反するので最初は戸惑うかもしれません。  
+また、オシレータなどの発音ノードは一度start()してstop()したら再利用はできない点も注意が必要です。再び音を鳴らす場合はまた新しくOscillatorNodeを作る必要があります。これはかなり直感に反するので最初は戸惑うかもしれません。  
 以下の例ではオシレータだけでなくゲインノードもクリックするたびに毎回生成しています。
 
 ```JavaScript
@@ -149,9 +149,9 @@ function LoadSample(ctx, url) {
 
 https://tonejs.github.io/
 
-Tone.jsは、前項で書いたようなWeb Audio APIの直観に反する点や頻出する定型的な記述を軽減します。
+Tone.jsは、前項で書いたようなWeb Audio APIの直感に反する点や頻出する定型的な記述を軽減します。
 
-Tone.jsを使う場合のpackage.jsonの内容は以下のようになります。
+Tone.jsを使う場合のpackage.jsonの内容は以下のようにdependenciesにtoneが追加されます。
 
 ```json
 {
@@ -193,7 +193,7 @@ index.htmlはWeb Audio APIのものと同じです。
 ### サイン波生成
 
 Web Audio APIの例と比べるとかなりシンプルになっているのがわかると思います。
-生成と同時にパラメータも接続先も設定しています。
+ノード生成とパラメータ設定と接続先設定を一行で書いています。
 また、発音ノードは一度音を鳴らし終えた後も再利用しているように書くことができます。
 
 ```JavaScript
@@ -249,9 +249,12 @@ window.addEventListener("load", ()=>{
 
 ## p5.js
 
-p5.jsのオーディオ機能は、以前はMinim風のライブラリもありましたが、現状はProcessingのオーディオAPIとの互換性をあまり意識していないp5.soundが標準的に使われています（ https://p5js.org/reference/#/libraries/p5.sound ）。
+https://p5js.org/
 
-比較的仕様が変わりやすいWeb Audio APIの最近の仕様にも追従していて使いやすい印象です。
+p5.jsはProcessing言語同等のものをJavaScriptで実装したものです。構文はあくまでもJavaScriptなのでProcessingとソースコードレベルの互換性はありませんが、わずかな違いなのでProcessing経験者であればすぐに使えるようになります。JavaScript側からの観点でも、Processingの直観的なわかりやすさは大きなメリットです。
+
+p5.jsのオーディオ機能は、以前はMinim風のライブラリもありましたが、現状はProcessingのオーディオAPIとの互換性をあまり意識していないp5.soundが標準的に使われています（ https://p5js.org/reference/#/libraries/p5.sound ）。
+比較的仕様が変わりやすいWeb Audio APIの最近の仕様にも追従していて使いやすいライブラリになっています。
 
 p5.jsの場合、npmやwebpackを使わない方がシンプルでProcessingらしくなるので、以下のindex.htmlでp5.jsとp5.sound.jsを取得して利用するようにします。
 
@@ -272,7 +275,7 @@ p5.jsの場合、npmやwebpackを使わない方がシンプルでProcessingら�
 
 ### サイン波生成
 
-p5.jsもシンプルに直観的に書くことができます。Autoplay Policyや発音ノードのライフタイムもほとんど気にする必要がありません。
+p5.jsもシンプルに直感的に書くことができます。Autoplay Policyや発音ノードのライフタイムもほとんど気にする必要がありません。
 
 ```JavaScript
 let osc;
@@ -295,6 +298,9 @@ function play() {
   osc.stop(1);
 }
 ```
+
+このプログラムはp5.js Editor( https://editor.p5js.org/ )でも実行することができます。
+
 
 ### Delayエフェクト
 
@@ -329,6 +335,7 @@ function play() {
 }
 ```
 
+このプログラムはp5.js Editorでは実行できません。サウンドファイルがサーバに存在しないためLoading...の状態で止まります。実行確認はローカルサーバなどでおこなってください。
 
 # 感想
 
