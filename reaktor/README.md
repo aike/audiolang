@@ -16,6 +16,8 @@ RackはGUI操作とパッチコード操作が画面切替なしにできるな�
 
 ## 通常のパッチによる実装
 
+Ensemble Structureと呼ばれる通常のパッチ画面です。
+
 ## サイン波生成
 
 ![sine](sine.png)
@@ -31,7 +33,7 @@ CoreではライブラリのSineやFbk Delayが用意されているので実装
 
 ## サイン波生成
 
-画面上半分はCoreを呼ぶ通常のパッチ、下半分がCoreプログラミングの画面です。
+画面上半分はCoreを呼ぶEnsemble Structure、下半分がCoreプログラミングの画面です。
 
 CoreのIn/Outには扱う信号がAudioかEventかの区別があり、プロパティで正しく設定する必要があります。下のpitchやgateのようにオレンジ色の丸はEvent、出力側のように白い丸はAudioを示しています。
 
