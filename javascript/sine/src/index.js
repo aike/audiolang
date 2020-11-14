@@ -1,11 +1,9 @@
 
 window.addEventListener("load", ()=>{
-  const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
-
   const ctx = new AudioContext();
 
   const button = document.querySelector('button');
-  button.onclick = async ()=>{
+  button.onclick = ()=>{
     if (ctx.state=="suspended")
       ctx.resume();
 
@@ -22,8 +20,8 @@ window.addEventListener("load", ()=>{
 
     // play
     osc.start(0);
-    await sleep(1000);
-    osc.stop();
+    // after 1 second, stop the sound
+    osc.stop(1);
   };
 
 });

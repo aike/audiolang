@@ -1,0 +1,20 @@
+{
+  "name": "tone_delay",
+  "version": "1.0.0",
+  "description": "delay effect using Tone.js",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack serve"
+  },
+  "author": "aike",
+  "license": "MIT",
+  "dependencies": {
+    "tone": "^14.7.58"
+  },
+  "devDependencies": {
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
