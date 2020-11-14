@@ -9,7 +9,7 @@ https://www.native-instruments.com/jp/products/komplete/synths/reaktor-6/
 Native Instrumentsの商用シンセサイザーにはREAKTORで作成されたものもある。
 
 通常のオーディオプログラミングの他に、低レベルプログラミング用のCore、モジュラーラック用のBlocksが用意されており、Maxで言うとそれぞれGen、BEAPに相当する。
-また2019年のVersion6.3よりRackというBlocksの新形式がリリースされた。
+また2019年のVersion6.3ではRackというBlocksの新形式がリリースされた。
 RackはGUI操作とパッチコード操作が画面切替なしにできるなど操作性が向上している一方、従来のノードとの互換性はなくなった。
 
 # 実装例
@@ -30,6 +30,10 @@ RackはGUI操作とパッチコード操作が画面切替なしにできるな�
 CoreではライブラリのSineやFbk Delayが用意されているので実装は簡単ですが、このSineやFbk DelayもCoreで作成されており、中を見ていくとプリミティブなパーツだけでサイン関数やフィードバックディレイを実現していることがわかります。
 
 ## サイン波生成
+
+画面上半分はCoreを呼ぶ通常のパッチ、下半分がCore Cellと呼ばれるCoreプログラミングの画面です。
+
+CoreのIn/Outには扱う信号がAudioかEventかの区別があり、プロパティで正しく設定する必要があります。下のpitchやgateのようにオレンジ色の丸はEvent、出力側のように白い丸はAudioを示しています。
 
 ![core/sine](core/sine.png)
 
