@@ -3,7 +3,7 @@ Orca
 
 # 概要
 
-https://hundredrabbits.itch.io/orca
+https://hundredrabbits.itch.io/orca  
 https://github.com/hundredrabbits/Orca
 
 二次元平面に文字を置いてプログラミングするライブコーディング用難解プログラミング言語。
@@ -170,7 +170,7 @@ cassetterへはMIDIでコマンドを送るので;ではなく!コマンドを�
 アプリ間でMIDI通信できるように、macOS付属のIAC DriverやWindowsのLoopBe1のようなツールで仮想MIDIを用意しておきます。
 cassetterはあらかじめ起動してchannel 0にvoice.wavを読み込んでおきます。
 読み込みファイル指定まではOrcaから送ることができません。
-ディレイタイム等の設定コマンドを送った後に、「00o」コマンドでchannel 0の音を1回鳴らします。
+Orcaプログラムでは、ディレイタイム等の設定コマンドを送った後に「00o」コマンドでchannel 0の音を1回鳴らしています。
 
 ```
 .......................................................................
