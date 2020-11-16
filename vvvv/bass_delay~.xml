@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta40.dtd" >
-   <PATCH nodename="D:\src\etc\audiolang\vvvv\bass_delay.v4p" systemname="delay_x86" filename="D:\src\etc\audiolang\vvvv\delay_x86.v4p">
-   <BOUNDS type="Window" left="18220" top="7720" width="9000" height="9000">
+   <PATCH nodename="D:\src\etc\audiolang\vvvv\delay_x86.v4p" systemname="delay_x86" filename="D:\src\etc\audiolang\vvvv\delay_x86.v4p">
+   <BOUNDS type="Window" left="19230" top="10700" width="9000" height="9000">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="3" systemname="IOBox (String)">
    <BOUNDS type="Box" left="2755" top="1305" width="1575" height="240">
@@ -63,7 +63,7 @@
    </BOUNDS>
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="18000">
+   <PIN pinname="Y Input Value" slicecount="1" values="20000">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
