@@ -3,8 +3,8 @@ Orca
 
 # 概要
 
-https://hundredrabbits.itch.io/orca  
-https://100r.co/site/orca.html
+https://github.com/hundredrabbits/Orca  
+https://100r.co/site/orca.html  
 https://wiki.xxiivv.com/site/orca.html
 
 二次元平面に文字を置いてプログラミングするライブコーディング用難解プログラミング言語。
@@ -12,7 +12,7 @@ https://wiki.xxiivv.com/site/orca.html
 開発はRekka & Devine。
 
 Orca自身は音源を内蔵しておらず、MIDIやUDP通信で楽器を制御して音を鳴らす。
-音源としては同じ作者のPilotシンセサイザー( https://hundredrabbits.itch.io/pilot )がよく使われる。
+音源としては同じ作者のPilotシンセサイザー( https://github.com/hundredrabbits/pilot )がよく使われる。
 
 # 解説
 
@@ -57,7 +57,7 @@ Dコマンドに似たようなものにCコマンド（Clock）があります�
 Jは下方向に、Yは右方向にセルの内容を複製します。
 Bang以外でもCの出力なども複製できます。ただしコマンドを複製しても複製されたものはコマンドとして機能はしません。
 
-## Bangの伝播
+## Bangの伝達
 
 ![image/img5](image/img5.png)
 
