@@ -64,8 +64,10 @@ Faustも主眼を置いているのは実行そのものではなくオーディ
 
 触った印象としては、Web IDEやFaustLiveも安定しているしfaust2sndfileも一発で実行ファイルを生成できて、完成度としては高く感じました。ドキュメントも充実しているので、今から学ぶには良い言語だと思います。
 
-ドキュメントに明記されていませんが、リポジトリにGPLとあるのでその点は少し注意が必要です。
+ドキュメントに明記されていませんが、リポジトリにGPLとあるのでその点は少し注意が必要です。  
 https://github.com/grame-cncm/faust/blob/master-dev/COPYING.txt
-ライブラリはSTKライセンス。
+
+ライブラリはSTKライセンス。  
 https://github.com/grame-cncm/faustlibraries/blob/master/licenses/stk-4.3.0.md
+
 アーキテクチャファイルはソースコードのコメントにGPLとあります。
