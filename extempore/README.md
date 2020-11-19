@@ -53,11 +53,9 @@ Extemporeは、Lisp系のSchemeをベースとした言語です。Scheme処理�
 defineで定義する関数や定数はSchemeで、bind-funcやbind-valで定義している関数や定数はxtlangです。
 xtlangは型を明記するのがルールで、暗黙の型変換をおこないません。
 
-bind-valで定義したxtlangの定数は、xtlangつまりbind-funcの内部でしか参照できない、という点に注意してください。
+bind-valで定義したxtlangの定数は、xtlangつまりbind-funcの内部でしか参照できない、という点に注意してください。  
 以下の例では、bind-valで定義したaはxtlangなのでトップレベルのprintlnでは参照できず、defineで定義したaが参照されています。
 一方で、bind-funcの内部でprintfした場合はbind-valで定義した方のaが参照されています。
-
-オーディオ関係の関数や定数はbind-func、bind-valで定義されているxtlangであることに留意してプログラミングする必要があります。
 
 ```Scheme
 (bind-val a i8* "hello xtlang")
@@ -74,6 +72,8 @@ bind-valで定義したxtlangの定数は、xtlangつまりbind-funcの内部で
 
 (print-a) ;=> "hello xtlang
 ```
+
+オーディオ関係の関数や定数はbind-func、bind-valで定義されているxtlangであることに留意してプログラミングする必要があります。
 
 ## サイン波生成
 
