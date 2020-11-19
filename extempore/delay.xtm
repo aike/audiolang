@@ -1,0 +1,12 @@
+(sys:load "libs/core/audio_dsp.xtm")
+
+(bind-func dsp:DSP
+  (let ((ab (AudioBuffer "/tmp/voice.wav"))
+        (delaytime 400)
+        (delay (delay_c (* (/ (* SR delaytime) 1000) 2)))
+        (wet 0.5)
+        (feedback 0.5))
+    (lambda (in time chan dat)
+      (delay (AudioBuffer_read ab chan) wet feedback))))
+
+(dsp:set! dsp)

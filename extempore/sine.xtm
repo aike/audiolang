@@ -1,0 +1,17 @@
+;; Sine function
+;;   predefined global constants:
+;;     TWOPIf: 2 * PI as float (6.28318530...)
+;;     SR: sample rate as i64 (44100)
+;;     SRf: sample rate as float (44100.0)
+(bind-func dsp:DSP
+  (lambda (in time chan data)
+    (let ((freq 440.0) (gain 0.1))
+      (* gain (sin (/ (* TWOPIf freq (i64tof (% time SR)))
+                      SRf))))))
+
+(dsp:set! dsp)
+
+;; stop sound function
+ (bind-func dsp:DSP 
+   (lambda (in time chan data) 0.0))
+
