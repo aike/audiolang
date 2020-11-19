@@ -6,11 +6,11 @@ Extempore
 https://extemporelang.github.io/
 
 サイバーフィジカルプログラミング用言語。
-作者のAndrew Sorensenは、サイバーフィジカルフィードバックシステムという、プログラマーがエージェントとして実行中の計算プロセスを調整し物理的なフィードバックを得る、人とコンピュータとの協調システムを提唱している(*1)。
+作者のAndrew Sorensenは、サイバーフィジカルフィードバックシステムという、プログラマーがエージェントとして実行中の計算プロセスを調整し物理的なフィードバックを得る人とコンピュータとの協調システムを提唱している(*1)。
 平たく言うとライブコーディングだが、ライブコーディングを含むもっと広い概念。
 
 Andrew Sorensenは、2005年にSchemeベースのMac用言語ソフトウェアImpromptuを開発。
-2011年に再設計した言語Extemporeをマルチプラットフォーム用オープンソースソフトウェアとしてリリース。
+2011年に再設計した言語Extemporeをマルチプラットフォーム用オープンソースソフトウェアとしてリリースした。
 
 (*1) Andrew Sorensen and Henry Gardner. 2010. Programming with time: cyber-physical programming with impromptu. SIGPLAN Not. 45, 10 (October 2010), 822–834.
 
@@ -20,7 +20,7 @@ Andrew Sorensenは、2005年にSchemeベースのMac用言語ソフトウェアI
 
 Extemporeはそれなりにドキュメントが整っているわりに、細部が十分説明されていない印象があるので、VSCode用のセットアップ手順について説明しておきます。
 
-まず、Extempore実行ファイルをダウンロードしてインストールします。（例：C:\bin\extempore\）  
+まず、Extempore実行ファイルをダウンロードしてインストールします（例：C:\bin\extempore\）。PATHを通す必要はありません。  
 https://github.com/digego/extempore/releases
 
 Extemporeはローカルサーバとして起動し、エディタと通信してコンパイル、実行します。
@@ -107,7 +107,7 @@ bind-funcでDSPという入出力仕様を持つ関数dspを定義していま�
 ## Delayエフェクト
 
 ディレイエフェクトはaudio_dsp.xtmで定義されているdelay_cがそのまま使えます。
-ただし、ディレイタイムをサンプル数で指定する必要があるのと、ステレオ2chの場合はさらに2倍する必要があります。
+ただし、ディレイタイムをサンプル数で指定する必要があります。ステレオ2chの場合はさらに2倍の値になります。
 (* (/ (* SR delaytime) 1000) 2)で、ミリ秒から2ch分のサンプル数に変換しています。
 
 wavファイルは相対パスで指定するとExtemporeサーバからの相対パスになってしまうので、絶対パスで指定する方が良いです。
