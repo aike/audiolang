@@ -9,7 +9,7 @@ https://extemporelang.github.io/
 作者のAndrew Sorensenは、サイバーフィジカルフィードバックシステムという、プログラマーがエージェントとして実行中の計算プロセスに関与して物理的なフィードバックを得るコンピュータと人との協調システムを提唱している(*1)。
 平たく言うとライブコーディングだが、ライブコーディングを含むもっと広い概念。
 
-Andrew Sorensenは、2005年にSchemeベースのMac用言語ソフトウェアImpromptuを開発。
+Andrew Sorensenは、2005年にSchemeベースのMac用プログラミング言語Impromptuを開発。
 2011年に再設計した言語Extemporeをマルチプラットフォーム用オープンソースソフトウェアとしてリリースした。
 
 (*1) Andrew Sorensen and Henry Gardner. 2010. Programming with time: cyber-physical programming with impromptu. SIGPLAN Not. 45, 10 (October 2010), 822–834.
@@ -46,7 +46,7 @@ Viewメニュー→Command Palette→Extempore:Connectでサーバに接続
 
 ## Schemeとxtlang
 
-Extemporeは、Lisp系のSchemeをベースとした言語です。Scheme言語としてかなりしっかり作られている印象です。
+Extemporeは、Lisp系のSchemeをベースとした言語です。Scheme処理系としてみてもかなりしっかり作られている印象です。
 さらにxtlangという高速で低レベル処理に適した言語内DSLがあり、オーディオプログラミングは主にxtlangでおこないます。
 
 どちらもS式で書かれているのでSchemeとxtlangは一見して同じように見えます。
@@ -62,7 +62,7 @@ bind-valで定義したxtlangの定数は、xtlangつまりbind-funcの内部で
 ```Scheme
 (bind-val a i8* "hello xtlang")
 
-(println a) ;=> unbound variable
+(println a) ;=> unbound variable: a
 
 (define a "hello scheme")
 
