@@ -50,7 +50,7 @@ void ofApp::audioOut(ofSoundBuffer & buffer) {
 		float dry = player->getSample();
 		float wet = tapOut->getSample();
 		float sample = dry + wet * wetLevel;
-		tapIn->feed(dry + (wet * feedBack));
+		tapIn->feed(dry + wet * feedBack);
 
 		int index = i * buffer.getNumChannels();
 		buffer[index + 0] = sample * volume;

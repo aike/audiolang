@@ -18,11 +18,10 @@ https://openframeworks.cc/
 
 Windowsの場合、Visual Studio 2017がインストール済みであればあまり迷うことはありません。
 
-ダウンロードして展開。  
+ダウンロードして展開します。  
 https://openframeworks.cc/download/
 
-projectGenerator-vsフォルダのprojectGenerator.exeを実行すると、apps\myAppsフォルダの下にプロジェクトが作成されIDEが起動する。
-
+projectGenerator-vsフォルダのprojectGenerator.exeを実行すると、apps\myAppsフォルダの下にプロジェクトが作成されIDEが起動します。そのままビルド、実行するだけでも何もしないウィンドウが表示されます。
 
 
 ## サイン波生成
@@ -72,8 +71,6 @@ ofApp.cpp
 audioOut()メソッドでbufferに波形を渡すと音が鳴ります。soundStreamの初期化を正しくおこなえば、あとはシンプルです。
 
 キーボードのeを押すと音が止まり、sを押すと再開するようにしてみました。こういったコールバック処理も非常に短く書くことができます。
-
-ウィンドウ関係は何も設定しなくても、デフォルトの大きさ、色でウィンドウが生成されます。
 
 ```c++
 #include "ofApp.h"
@@ -191,7 +188,7 @@ void ofApp::dragEvent(ofDragInfo dragInfo) {
 
 ## Delayエフェクト
 
-wavファイルを再生するには標準のofSoundPlayerがありますが、これはサンプルデータを加工するのは難しそうなので、Soundアドオンの中からofxATKを使って実装します。ofxATKはディレイエフェクトも用意されており今回の目的に合いそうです。
+wavファイルを再生するには標準のofSoundPlayerがありますが、これはサンプルデータを加工するのは難しそうなので、Soundアドオンの中からofxATKを使って実装してみました。ofxATKはディレイエフェクトも用意されており今回の目的に合っています。今回は主旨が違うので使いませんでしたが、oFからPure DataやSuperColliderを使って音を鳴らすためのアドオンもあります。
 
 https://ofxaddons.com/categories/5-sound  
 https://github.com/aaronaanderson/ofxATK
@@ -254,7 +251,7 @@ public:
 ofApp.cpp  
 全体の構成はサイン波生成とほとんど同じです。
 TapInでディレイバッファに格納、TapOutでディレイバッファから読み込みというのはMaxに似ています。
-ディレイバッファをクリアしておかないとクリックノイズが出るようなので0で埋めています。
+最初にディレイバッファをクリアしておかないとクリックノイズが出るようなので0で埋めています。
 
 データファイルは bin\data\ フォルダに置いておくとofToDataPath()でアクセスできます。
 SoundFileで読み込み、SoundPlayer::playで再生などシンプルでわかりやすいです。
@@ -314,7 +311,7 @@ void ofApp::audioOut(ofSoundBuffer & buffer) {
 		float dry = player->getSample();
 		float wet = tapOut->getSample();
 		float sample = dry + wet * wetLevel;
-		tapIn->feed(dry + (wet * feedBack));
+		tapIn->feed(dry + wet * feedBack);
 
 		int index = i * buffer.getNumChannels();
 		buffer[index + 0] = sample * volume;
@@ -383,7 +380,7 @@ void ofApp::dragEvent(ofDragInfo dragInfo) {
 
 # 感想
 
-C++で書かれたネイティブアプリが生成できるので、openFrameworksは高速なグラフィックやオーディオ処理が必要な場面で特に優位性があります。
+C++で書かれたネイティブアプリという点で、openFrameworksは高速なグラフィックやオーディオ処理が必要な場面で特に優位性があります。
 また、C++の良くも悪くも煩雑なところが隠蔽されて、本来のオーディオ処理に注力できるのは大きな魅力です。
 とはいえProcessingなどと比べるとそこまで手軽とは言い難いので、高速性が必要な専門家の道具という印象です。
 
