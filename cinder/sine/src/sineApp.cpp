@@ -13,8 +13,6 @@ using namespace std;
 class CinderProjectApp : public App {
 public:
 	void setup() override;
-	void mouseDown(MouseEvent event) override;
-	void update() override;
 	void draw() override;
 
 	audio::GenNodeRef	mOscillator;
@@ -38,14 +36,6 @@ void CinderProjectApp::setup()
 	// play
 	mOscillator->enable();
 	ctx->enable();
-}
-
-void CinderProjectApp::mouseDown(MouseEvent event)
-{
-}
-
-void CinderProjectApp::update()
-{
 }
 
 void CinderProjectApp::draw()
