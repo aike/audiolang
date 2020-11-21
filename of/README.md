@@ -5,7 +5,7 @@ openFrameworks
 
 https://openframeworks.cc/
 
-クリエイティブコーディングのためのオープンソースC++ツールキット。略称はoF。
+クリエイティブコーディングのためのオープンソースC++ツールキット。略称はoF。MITライセンス。
 
 初出は2005年、開発はZachary Lieberman、Theo Watson、Arturo Castro。
 
