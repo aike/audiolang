@@ -1,6 +1,8 @@
 .DS_Store
 .vscode
 .vs/
+x64/
+*.user
 node_modules/
 dist/
 package-lock.json
