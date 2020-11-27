@@ -3,6 +3,8 @@
 .vs/
 x64/
 *.user
+.cpcache/
+native/
 node_modules/
 dist/
 package-lock.json
