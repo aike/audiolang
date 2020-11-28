@@ -1,0 +1,17 @@
+SampleRate = 48000
+PI = 3.1415956
+
+theta = 0
+delta = 0
+
+fn sin_osc(freq:float) {
+    delta = 2 * PI * freq / SampleRate
+    theta = theta + delta
+    return sin(theta)
+}
+
+gain = 0.5
+
+fn dsp(time:float)->float {
+    return sin_osc(440) * gain
+}
