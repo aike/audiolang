@@ -8,7 +8,7 @@ feedback = 0.5
 num_feedback = 5
 
 fn seek(speed, size) {
-    return if(self < size * 2) self + speed else self
+    return if (self < size * 2) self + speed else self
 }
 
 fn fb_delay(buf, size, delay, pos, fb) {
