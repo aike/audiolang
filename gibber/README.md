@@ -7,7 +7,7 @@ https://gibber.cc/
 https://github.com/gibber-cc/gibber  
 https://bigbadotis.gitbooks.io/gibber-user-manual/content/
 
-Webブラウザで高レベルのオーディオ合成とシーケンスを実行するための言語とライブパフォーマンス環境。JavaScriptのAudio機能を、より簡潔な記述で扱えるように設計されている。2D/3Dグラフィックや複数人によるコラボレーション機能もサポートしている。
+Webブラウザで高レベルのオーディオ合成とシーケンスを実行するための言語とライブパフォーマンス環境。JavaScriptのAudio機能を、より簡潔な記述で扱えるように設計されている。2D/3Dグラフィックや複数人によるコラボレーション機能もサポートしている。MITライセンスのオープンソースソフトウェア。
 
 カリフォルニア大学のCharles Robertsにより開発。初出は2012年(*1)
 
