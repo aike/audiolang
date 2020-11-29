@@ -7,7 +7,7 @@ https://www.plogue.com/products/bidule.html
 
 インタラクティブなコンピューター音楽とマルチメディアを作成するための商用ソフトウェアアプリケーション。MaxやPure Dataのようにノードを接続してプログラミングするビジュアル言語。MIDI、OSCによる通信、ReWireデバイスとしてDAWとの連携、VST2、VST3、AUプラグインのホストといった機能を持っている。また、VSTプラグインとして機能するプラグインバージョンも用意されている。
 
-開発はPlogue Arts and Technology(カナダ)
+開発はPlogue Arts and Technology社(カナダ)
 
 # 実装例
 
@@ -15,13 +15,13 @@ https://www.plogue.com/products/bidule.html
 
 OscillatorノードにConstantノードでパラメータを与えてOutputに接続すると音が鳴ります。
 
-[sine](sine.png)
+![sine](sine.png)
 
 ## Delayエフェクト
 
 Audio File Playerノードでwavファイルを再生することができます。Stereo DelayはWet GainがないのでDry GainをゼロにしてミキサーでDry/Wetのバランスを調整しやすいようにしました。
 
-[delay](delay.png)
+![delay](delay.png)
 
 
 # 感想
