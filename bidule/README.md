@@ -19,7 +19,7 @@ OscillatorノードにConstantノードでパラメータを与えてOutputに�
 
 ## Delayエフェクト
 
-Audio File Playerノードでwavファイルを再生することができます。Stereo DelayはWet GainがないのでDry GainをゼロにしてミキサーでDry/Wetのバランスを調整しやすいようにしました。
+Audio File Playerノードでwavファイルを再生することができます。Stereo DelayノードはWet GainがないのでDry GainをゼロにしてミキサーでDry/Wetのバランスを調整しやすいようにしました。
 
 ![delay](delay.png)
 
