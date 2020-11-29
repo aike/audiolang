@@ -48,7 +48,7 @@ GibberはWebアプリということもあり、任意のwavファイルを鳴�
 ```JavaScript
 
 voice = Freesound(213284);
-// sampling data is licensed under creative commons by attribution 3.0 AderuMoro.
+// sampling audio is licensed under Creative Commons BY Attribution 3.0 AderuMoro.
 // https://freesound.org/s/213284/
 // https://www.youtube.com/user/AderuMoro
 
