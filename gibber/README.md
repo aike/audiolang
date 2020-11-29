@@ -3,8 +3,8 @@ Gibber
 
 # 概要
 
-https://gibber.cc/
-https://github.com/gibber-cc/gibber
+https://gibber.cc/  
+https://github.com/gibber-cc/gibber  
 https://bigbadotis.gitbooks.io/gibber-user-manual/content/
 
 Webブラウザで高レベルのオーディオ合成とシーケンスを実行するための言語とライブパフォーマンス環境。JavaScriptのAudio機能を、より簡潔な記述で扱えるように設計されている。2D/3Dグラフィックや複数人によるコラボレーション機能もサポートしている。
@@ -24,7 +24,7 @@ Sine関数で簡単に音を鳴らすことができます。引数は値でもJ
 Sine(440, 0.5)
 
 Sine({ frequency:440, amp:0.5 })
----```
+```
 
 ## Delayエフェクト
 
