@@ -245,7 +245,7 @@ window.addEventListener("load", ()=>{
 
 https://p5js.org/
 
-p5.jsはProcessing言語同等のものをJavaScriptで実装したライブラリです。構文はあくまでもJavaScriptなのでProcessingとソースコードレベルの互換性はありませんが、わずかな違いなのでProcessing経験者であればすぐに使えるようになります。JavaScript側からの観点でも、Processingの直感的なわかりやすさは大きなメリットです。
+p5.jsはProcessing言語同等のものをJavaScriptで実装したライブラリです。構文はあくまでもJavaScriptなのでProcessingとソースコードレベルの互換性はありませんが、わずかな違いなのでProcessing経験者であればすぐに使えるようになります。JavaScript側からの観点でも、Processingの直感的なわかりやすさは大きなメリットです。インストール不要のWebプレイグラウンドp5.js Editor( https://editor.p5js.org/ )が用意されていて手軽に試すことができます。
 
 p5.jsのオーディオ機能は、以前はMinim風のライブラリもありましたが、現状はProcessingのオーディオAPIとの互換性をあまり意識していないp5.soundが標準的に使われています（ https://p5js.org/reference/#/libraries/p5.sound ）。比較的変わりやすいWeb Audio APIの最近の仕様にも追従していて使いやすいライブラリになっています。
 
@@ -292,7 +292,7 @@ function play() {
 }
 ```
 
-このプログラムはp5.js Editor( https://editor.p5js.org/ )でも実行することができます。
+このプログラムはp5.js Editorでも実行することができます。
 
 
 ### Delayエフェクト
