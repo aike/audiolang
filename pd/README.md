@@ -7,9 +7,9 @@ https://puredata.info/
 
 マルチメディア用のオープンソースのビジュアルプログラミング言語。
 
-作者はMaxの開発者でもあるMiller Puckette。
+作者はMaxの開発者でもあるMiller Puckette(カリフォルニア大)。
 
-1980年代にMaxの前身となるThe Patcherを開発。Maxは1990年にライセンス供与されたOpcode社より販売される。Miller Pucketteは1996年あらたに再設計した言語としてPure Dataをリリース。
+1980年代のIRCAM在籍時にMaxの前身となるThe Patcherを開発。Maxは1990年にライセンス供与されたOpcode社より販売される。カリフォルニア大移籍後の1996年あらたに再設計した言語としてPure Dataをリリース。
 
 # 実装例
 
