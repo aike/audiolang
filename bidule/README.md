@@ -3,7 +3,7 @@ Bidule
 
 # 概要
 
-https://www.plogue.com/products/bidule.html
+https://www.plogue.com/products/bidule.html  
 https://www.plogue.com/bidule/help/index.html
 
 インタラクティブなコンピューター音楽とマルチメディアを作成するための商用ソフトウェアアプリケーション。MaxやPure Dataのようにノードを接続してプログラミングするビジュアル言語。MIDI、OSCによる通信、ReWireデバイスとしてDAWとの連携、VST2、VST3、AUプラグインのホストといった機能を持っている。また、VSTプラグインとして機能するプラグインバージョンも用意されている。
