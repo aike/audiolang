@@ -5,15 +5,13 @@ Processing
 
 https://processing.org/
 
-アート、デザイン、研究、教育など、クリエイティブコーディングを目的とした言語。
-基本はグラフィックプログラミング用であるが、追加ライブラリによりオーディオプログラミングも可能。
+アート、デザイン、研究、教育など、クリエイティブコーディングを目的とした言語。基本はグラフィックプログラミング用であるが、追加ライブラリによりオーディオプログラミングも可能。
 
-開発はMITメディアラボのJohn Maedaグループに在籍していたBen FryとCasey Reas。
-現在はProcessing Foundationが管理している。
+開発はMITメディアラボのJohn Maedaグループに在籍していたBen FryとCasey Reas。現在はProcessing Foundationが管理している。
 
 # 実装例
 
-Processingのオーディオライブラリとしては、Minim( http://code.compartmental.net/minim/index.html )またはSound( https://processing.org/reference/libraries/sound/index.html )が使用されることが多いようです。Processing 2ではMinimが標準バンドルされていました。SoundはProcessing 3用にProcessing Foundationが開発した公式ライブラリです。どちらもスケッチメニューから追加インストールすることで使えるようになります。
+Processingのオーディオライブラリとしては、Minim( http://code.compartmental.net/minim/index.html )またはSound( https://processing.org/reference/libraries/sound/index.html )を使用することが多いようです。Processing 2ではMinimが標準バンドルされていました。SoundはProcessing 3用にProcessing Foundationが開発した公式ライブラリです。どちらもスケッチメニューから追加インストールすることで使えるようになります。
 
 ## サイン波生成
 
@@ -45,8 +43,7 @@ void draw(){
 
 ### Soundライブラリの場合
 
-Soundライブラリでのオシレーターは非常にシンプルに書くことができます。
-初期化と同時に音を出すとノイズが乗るようなので500msec待ってからplay()を呼ぶようにしました。
+Soundライブラリでのオシレーターは非常にシンプルに書くことができます。初期化と同時に音を出すとノイズが乗るようなので500msec待ってからplay()を呼ぶようにしました。
 
 ```Processing
 import processing.sound.*;
@@ -68,10 +65,7 @@ void draw() {
 
 ### Minimライブラリの場合
 
-Minimライブラリは、さらにMinim Core系列とUGen系列とがあります。
-単純なwavファイル再生の場合、Minim CoreのAudioPlayerを使用することもできるますが、
-UGenの方がエフェクトも充実し、オーディオグラフのルーティングも柔軟におこなえるため、
-以下の例ではUGenを使用しています。
+Minimライブラリは、さらにMinim Core系列とUGen系列とがあります。単純なwavファイル再生の場合、Minim CoreのAudioPlayerを使用することもできるますが、UGenの方がエフェクトも充実し、オーディオグラフのルーティングも柔軟におこなえるため、以下の例ではUGenを使用しています。
 
 ```Processing
 import ddf.minim.*;
@@ -132,13 +126,7 @@ void draw() {
 
 # 感想
 
-Processingはクリエイティブコーディングという概念を一般に広めた言語だと思います。
-構文のわかりやすさ、IDEの使いやすさなど、気軽に使うことができるのが特徴です。
-また、setup→drawのプログラム構造は、openFrameworksやCinderなどにも引き継がれており、
-クリエイティブコーディングを学ぶ最初の言語として最適だと思います。
+Processingはクリエイティブコーディングという概念を一般に広めた言語だと思います。構文のわかりやすさ、IDEの使いやすさなど、気軽に使うことができるのが特徴です。また、setup→drawのプログラム構造は、openFrameworksやCinderなどにも引き継がれており、クリエイティブコーディングを学ぶ最初の言語として最適だと思います。
 
-オーディオプログラミングに関しては、Processing 3になって標準ライブラリとしてSoundが提供されるようになり、
-それまで多用されていたMimimと混乱の原因になっているようにも思います。
-今回両方使ってみた印象では、シンプルなオーディオ処理であればわかりやすいSound、
-少し凝ったエフェクト処理をおこなう場合は機能が豊富なMimimのUGenを選択するのが良さそうでした。
+オーディオプログラミングに関しては、Processing 3になって公式ライブラリとしてSoundが提供されるようになり、それまで多用されてきたMimimと混乱の原因になっているようにも思います。今回両方使ってみた印象では、シンプルなオーディオ処理であればわかりやすいSound、少し凝ったエフェクト処理をおこなう場合は機能が豊富なMimimのUGenを選択するのが良さそうでした。
 
