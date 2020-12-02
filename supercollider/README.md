@@ -7,7 +7,7 @@ https://supercollider.github.io/
 
 サウンドを扱うミュージシャン、アーティスト、研究者のための、オーディオ合成とアルゴリズム作曲用プラットフォーム。ライセンスはGPL v3。
 
-1996年James McCartneyにより開発。James McCartneyは2002年アップル社に入りCoreAudio開発の初期メンバーとなる。また、その年にSuperColliderはGPLライセンスのオープンソースとなり、現在はコミュニティにより管理されている。
+1996年James McCartneyにより開発。James McCartneyは2002年にアップル社に入りCore Audio開発の初期メンバーとなる。また、その年にSuperColliderはGPLライセンスのオープンソースとなり、現在はコミュニティにより管理されている。
 
 # 解説
 
