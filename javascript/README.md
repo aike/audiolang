@@ -5,7 +5,7 @@ JavaScript
 
 https://www.w3.org/TR/webaudio/
 
-Web Audio APIはWebブラウザのJavaScriptで使用できるオーディオAPI。W3Cが仕様を策定して各ブラウザのデベロッパーが実装している。
+Web Audio APIはWebブラウザのJavaScriptで使用できるオーディオAPI。W3Cが仕様を策定して各ブラウザのデベロッパーが実装している。2011年にGoogle Chromeの機能として公開されたものが最初の実装事例。現在はスマートフォン用も含め主要なWebブラウザが対応している。
 
 # 実装例
 
