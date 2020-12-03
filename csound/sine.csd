@@ -13,7 +13,7 @@ nchnls = 1             ; number of channels
 ; define instrument 1
 instr 1
  aSig oscil p5, p4     ; use oscillator with p5(amplitude) and p4(frequency)
- outs aSig             ; connect to channel 0 and channel 1 
+ outs aSig             ; output to device
 endin
 </CsInstruments>
 
