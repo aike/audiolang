@@ -5,12 +5,10 @@ Overtone
 
 https://overtone.github.io/
 
-新しい音楽のアイデアを探求するために設計されたオープンソースのオーディオプログラミング環境。
-OvertoneはLisp系のClojure言語のライブラリとして実装されている。オーディオエンジンにSuperColliderを使用する。
+新しい音楽のアイデアを探求するために設計されたオープンソースのオーディオプログラミング環境。OvertoneはLisp系のClojure言語のライブラリとして実装されている。オーディオエンジンにSuperColliderを使用する。
 
 
-開発はSonic Piと同じくケンブリッジ大コンピュータ研究所のSam Aaron。
-Sonic Piが主に教育目的の言語であるのに対し、Overtoneはプロのアーティスト/プログラマーがアートのコンテキストで使用するように設計されている。(*1)
+開発はSonic Piと同じくケンブリッジ大コンピュータ研究所のSam Aaron。Sonic Piが主に教育目的の言語であるのに対し、Overtoneはプロのアーティスト/プログラマーがアートのコンテキストで使用するように設計されている。(*1)
 
 (*1) Samuel Aaron and Alan F. Blackwell. 2013. From sonic Pi to overtone: creative musical experiences with domain-specific and functional languages. In Proceedings of the first ACM SIGPLAN workshop on Functional art, music, modeling & design (FARM '13). Association for Computing Machinery, New York, NY, USA, 35–46.
 
@@ -26,21 +24,29 @@ https://overtone.github.io/docs.html
 Overtoneは、独立した言語ではなくClojure言語のライブラリとして提供されます。そのためまずはClojureをインストールします。ClojureのWindows版はまだアルファ版ということなのでmacOSにインストールしました( https://clojure.org/guides/getting_started )。  
 ※ClojureはJRE上で動くので環境をうまく作ることができればWindowsでも問題なく動くとは思います。
 
-> $ brew install clojure/tools/clojure
+```
+> brew install clojure/tools/clojure
+```
 
 ライブラリの依存関係を記述するdeps.ednファイルを作成してカレントディレクトリに置きます。
 
-> $ echo '{:deps {overtone/overtone {:mvn/version "0.10.6"}}}' > deps.edn
+```
+> echo '{:deps {overtone/overtone {:mvn/version "0.10.6"}}}' > deps.edn
+```
 
 ## Overtoneの起動方法
 
 ClojureのREPLを起動(clojureコマンドあるいは略称のcljコマンドのどちらを使っても可)。
 
-> $ clj
+```
+> clj
+```
 
 Overtoneライブラリ読み込み。
 
-> user=> (use 'overtone.live)
+```
+user=> (use 'overtone.live)
+```
 
 終了はCtrl+Dです。
 
@@ -81,7 +87,9 @@ stopコマンドですべての音を止めます。
 
 音を鳴らして一定時間経ったら自動的に止めるにはThread/sleepを使用して時間待ちをします。次のようなプログラムにすると、
 
-> $ clj filename.clj
+```
+> clj filename.clj
+```
 
 のようにしてOSのコマンドラインからも実行できます。コマンドラインから実行した場合、終了はCtrl+Cです。
 
@@ -126,8 +134,7 @@ overtoneのREPL上で以下のコマンドを実行すると上記の記述が\~
 (swap! live-config assoc-in [:sc-args :max-buffers] 1024)
 ```
 
-wavファイルはload-sample関数で読み込みます。
-definstの中でlocal-inとlocal-outを使ってフィードバックループを実現しています。
+wavファイルはload-sample関数で読み込みます。definstの中でlocal-inとlocal-outを使ってフィードバックループを実現しています。
 
 ```Clojure
 (use 'overtone.live)
@@ -148,9 +155,7 @@ definstの中でlocal-inとlocal-outを使ってフィードバックループ�
 (play-with-delay voice-buf)
 ```
 
-インストゥルメンツのエフェクトチェーンを使ったバージョンは次のようになります。
-バッファをそのまま再生するvoiceインストゥルメンツを作成し、それにinst-fx!でエフェクトを付加します。inst-fx!を複数回実行することで複数のエフェクトをかけることも可能です。エフェクトが付加されたら、(voice)とするだけでエフェクトのかかった音が再生されるようになります。
-
+インストゥルメンツのエフェクトチェーンを使ったバージョンは次のようになります。バッファをそのまま再生するvoiceインストゥルメンツを作成し、それにinst-fx!でエフェクトを付加します。inst-fx!を複数回実行することで複数のエフェクトをかけることも可能です。エフェクトが付加されたら、(voice)とするだけでエフェクトのかかった音が再生されるようになります。
 
 ```Clojure
 (use 'overtone.live)
@@ -187,9 +192,7 @@ definstの中でlocal-inとlocal-outを使ってフィードバックループ�
 
 Sonic PiのSam Aaronが設計しただけあって、裏で動くSuperColliderをインストール時も実行時も意識せずにすむのは使いやすいです。
 
-ただ、Clojure言語そのものやOvertoneはプロ向けという印象でSonic Piほどの敷居の低さはありません。
-Lisp系言語の拡張性を存分に使って独自の音楽言語を構築しています。
-ドキュメントがそれなりに整備されているのと、(odoc 関数名)で簡単なヘルプは出るようになっているので手がかりはありますが、それでもライブラリやサンプルのソースコードを読んで仕様を把握することは必須です。また、ある程度SuperColliderの知識があった方がdefsynthやugenの概念に迷わないと思います。
+ただ、Clojure言語そのものやOvertoneはプロ向けという印象でSonic Piほどの敷居の低さはありません。Lisp系言語の拡張性を存分に使って独自の音楽言語を構築しています。ドキュメントがそれなりに整備されているのと、(odoc 関数名)で簡単なヘルプは出るようになっているので手がかりはありますが、それでもライブラリやサンプルのソースコードを読んで仕様を把握することは必須です。また、ある程度SuperColliderの知識があった方がdefsynthやugenの概念に迷わないと思います。
 
 細かいことですが、Overtone(倍音)という名前が一般名詞であることも学習しづらい要因のひとつです。「overtone music」「overtone language」などと検索してもなかなか実装例を見つけることができません。「overtone audio programming」だと少し出てきます。言語やライブラリ設計の良さは十分感じますし、初登場から10年近く経っており蓄積も十分あるはずなので、もう少し学びやすければより多くの人に使われるのではないかと感じました。
 
