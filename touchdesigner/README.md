@@ -8,15 +8,14 @@ https://derivative.ca/
 インタラクティブにマルチメディアコンテンツを作成するためのノードベースビジュアルプログラミング言語。
 クリエイティブコーディングに使用される。
 
-開発はDerivative社(カナダ)。
+開発はDerivative社(カナダ)。もともとOmnibus社でHoudiniの前身PRISMSを開発していたGreg HermanovicとKim DavidsonはSideFXを設立して1996年にHoudiniをリリースする。その後、2000年にGreg HermanovicはSideFXを離れ、Derivative社を設立しTouchDesignerを開発。そのためTouchDesignerはHoudiniと設計思想に共通点が多い。
+
 
 # 実装例
 
 ## サイン波生成
 
-TouchDesignerのオーディオ関連ノードはCHOPカテゴリーにまとまっています。
-CHOPのAudio OscillatorとAudio Device Outを接続すると音が出ます。
-周波数はAudio Oscillatorのプロパティから設定、音量はConstantをAudio Device Outに接続して調整するようにしました。
+TouchDesignerのオーディオ関連ノードはCHOPカテゴリーにまとまっています。CHOPのAudio OscillatorとAudio Device Outを接続すると音が出ます。周波数はAudio Oscillatorのプロパティから設定、音量はConstantをAudio Device Outに接続して調整するようにしました。
 
 ![sine](sine.png)
 
