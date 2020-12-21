@@ -7,7 +7,7 @@ https://libcinder.org/
 
 プロフェッショナル品質のクリエイティブコーディングのためのオープンソースC++ライブラリ。二条項BSDライセンス。
 
-初出は2010年、広告代理店The Barbarian Group(米国)のAndrew Bellが中心となり開発。
+初出は2010年、広告会社The Barbarian Group(米国)のAndrew Bellが中心となり開発。
 
 もともと商用メディア制作用途の内製ライブラリとして作られており、高速なグラフィックスやモダンで抽象化された記法が特徴。アプリケーションのひな形が用意されていて、Processingのようにsetup()、draw()関数の内容を実装するだけでグラフィックやサウンドを利用したネイティブアプリを作成できる。openFrameworksと同様にプロジェクトジェネレータや拡張ライブラリが用意されている。
 
@@ -15,7 +15,7 @@ https://libcinder.org/
 
 ## セットアップ
 
-Windowsの場合、Cinderの最新版はVisual C++ 2015用になっているので、Visual C++ 2017でビルドするときは少し注意が必要です。
+Windowsの場合、Cinderの最新版はVisual C++ 2015用になっているので、Visual C++ 2017でビルドするときは少し注意が必要です。(Visual C++ 2019はライブラリ構成が変わっていて簡単にはビルドできなさそうです)
 
 ダウンロードして展開します。  
 https://libcinder.org/download

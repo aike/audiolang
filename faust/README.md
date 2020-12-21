@@ -16,7 +16,7 @@ https://faust.grame.fr/
 
 ## サイン波生成
 
-Faustのライブラリはオシレーターならos、エフェクトならefといった名前でグループ化されています。元がモノラルなので<: _,_をつけて2chのステレオ音声にして出力しています。この例ではわかりにくいですが、Faustが扱うデータはサンプル単位です（つまりMaxでいうところのGen）。  
+Faustのライブラリはオシレーターならos、エフェクトならefといった名前でグループ化されています。元がモノラルなので<: \_,\_をつけて2chのステレオ音声にして出力しています。この例ではわかりにくいですが、Faustが扱うデータはサンプル単位です（つまりMaxでいうところのGen）。  
 Web IDE( https://faustide.grame.fr/ )やFaustLive( https://faust.grame.fr/downloads/#faustlive )で実行できます。
 
 #### sine.dsp

@@ -7,7 +7,7 @@ https://processing.org/
 
 アート、デザイン、研究、教育など、クリエイティブコーディングを目的とした言語。基本はグラフィックプログラミング用であるが、追加ライブラリによりオーディオプログラミングも可能。
 
-開発はMITメディアラボのJohn Maedaグループに在籍していたBen FryとCasey Reas。現在はProcessing Foundationが管理している。
+MITメディアラボのJohn Maedaグループに在籍していたBen FryとCasey Reasが2001年に開発。2012年からはProcessing Foundationによって管理されている。当初、processing.orgのドメインが使えずproce55ing.orgを使用していた。そのためProce55ingと呼ばれることもあったが正式な名称ではなく、現在ではほとんど使われることはない。（p5.jsなどに名残がある）
 
 # 実装例
 

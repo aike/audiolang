@@ -5,7 +5,7 @@ Houdini
 
 https://www.sidefx.com/products/houdini/
 
-高精度な映画クオリティの映像制作を支援するプロシージャル3Dアニメーション制作ツール。高額な商用ソフトウェアであるが、小規模スタジオ・個人向けHoudini Indieや非商用利用向けの無料版Houdini Apprenticeなど利用しやすい利用プランも用意されている。
+高精度な映画クオリティの映像制作を支援するプロシージャル3Dアニメーション制作ツール。高額な商用ソフトウェアであるが、小規模スタジオ・個人向けHoudini Indieや非商用利用向けの無料版Houdini Apprenticeなど利用しやすいプランも用意されている。
 
 開発はSideFX社(カナダ)。Omnibus社で1980年代から開発されていたPRISMSが前身。OmnibusのKim DavidsonとGreg Hermanovicが1987年にSideFXを設立、1996年にSideFXは最初のHoudiniをリリース。2000年にGreg HermanovicはSideFXを離れ、Derivative社を設立しTouchDesignerを開発する。
 
@@ -25,7 +25,7 @@ OscillatorのChannelタブでSample Rateを44100にします。音質劣化し�
 
 ![sine2](sine2.png)
 
-Constantノードのパラメータchan1はデフォルトの0です。これを1にするとOscillatorは880Hz、-1にすると220Hzのサイン波を出力します。
+Constantノードのパラメータchan1はデフォルトの0とします。これを1にするとOscillatorは880Hz、-1にすると220Hzのサイン波を出力します。
 
 ![sine3](sine3.png)
 
@@ -41,7 +41,7 @@ ConstantノードのChannelタブでは、Single Frameのチェックを外し�
 
 ![btn1](btn1.png)
 
-Global Animation OptionsのMaintain realtime playback, possibly skipping framesを選択します。
+Global Animation OptionsのMaintain realtime playback, possibly skipping framesを選択します。これを設定しないと再生時に音声が途切れることがあるそうです。
 
 ![sine5](sine5.png)
 
@@ -62,7 +62,7 @@ Playボタンを押して再生します。
 
 CHOP NetworkにFile、Delay、Mathを配置して接続します。
 
-Fileのプロパティからwavファイルを選択しておきます。ファイル再生の場合、Sample Rateの設定は不要です。
+Fileのプロパティからwavファイルを選択しておきます。
 
 Delayノードは、パラメータ設定や接続でフィードバックループを作成することはできないようです。しかしながら、ひとつのノードで4個までシングルディレイを設定できるので、これを使ってフィードバックディレイ風にしてみました。
 
@@ -91,4 +91,6 @@ Playボタンで再生します。
 Houdiniは基本的にはプロユースの3DCGツールで、グラフィックスに関する機能やドキュメントが充実しています。それに比べてオーディオプログラミングに関する情報は十分ではない印象です。オーディオファイル再生に合わせて波形を表示したり3Dモデルを動かすといった解説動画は多いものの、音を生成したりサウンドエフェクトに関する解説は非常に少なく試行錯誤が必要でした。
 
 CHOPにはNoiseノードや、モジュレーションLFOなどに使えるWaveノードもあり、ある程度のオーディオプログラミングもできますが、楽ではありません。また、VEXと呼ばれるスクリプティング機能やVEXのノードベースインタフェースであるVOPもあり、これを使うことでさらに低レベルのオーディオプログラミングも不可能ではないようです。
+
+プロジェクトファイルをシェアする場合は少し注意が必要です。商用版のプロジェクトファイルは.hip形式ですが、Houdini IndieやHoudini Apprenticeの場合、.hiplc、.hipncと異なる形式で保存され、これらを商用版Houdiniで読んでも.hip形式に変換できません。またプロジェクトファイルにはホームディレクトリ情報(Windowsの場合、C:\Users\username)が含まれるため、他人に公開するファイルからOSのアカウント名を知られたくない場合は専用のアカウントを使うなど工夫が必要になります。
 

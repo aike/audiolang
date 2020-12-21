@@ -7,7 +7,9 @@ https://sonic-pi.net/
 
 Ruby言語をベースに音楽用機能と実行環境一体型IDEを含めたライブコーディング用言語環境。サウンドエンジンはSuperColliderを使用する。Raspberry Piでも動く。
 
-開発はOvertoneと同じくケンブリッジ大コンピュータ研究所のSam Aaron。
+開発はOvertoneと同じくケンブリッジ大コンピュータ研究所のSam Aaron。初出は2012年。音楽がプログラミング教育に適したテーマであると考えたRaspberry Pi Foundationからの依頼により、プログラミングやその他コンピュータ技術の経験がない12歳の学生にも使えるように設計された。(*1)
+
+(*1) Samuel Aaron and Alan F. Blackwell. 2013. From sonic Pi to overtone: creative musical experiences with domain-specific and functional languages. In Proceedings of the first ACM SIGPLAN workshop on Functional art, music, modeling & design (FARM '13). Association for Computing Machinery, New York, NY, USA, 35–46.
 
 # 実装例
 
