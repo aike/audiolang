@@ -1,0 +1,15 @@
+{
+    "soulPatchV1":
+    {
+        "ID":               "net.aikelab.delay",
+        "version":          "1.0",
+        "name":             "Delay",
+        "description":      "sample playback and delay fx",
+        "category":         "Fx",
+        "manufacturer":     "aikelab.net",
+        "isInstrument":     false,
+
+        "source":           "delay.soul",
+		"externals":		{ "Delay::voice": "../voice.wav" }
+    }
+}

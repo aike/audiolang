@@ -1,0 +1,14 @@
+{
+    "soulPatchV1":
+    {
+        "ID":               "net.aikelab.sine",
+        "version":          "1.0",
+        "name":             "SineWave",
+        "description":      "sine wave example",
+        "category":         "synth",
+        "manufacturer":     "aikelab.net",
+        "isInstrument":     false,
+
+        "source":           "sine.soul"
+    }
+}

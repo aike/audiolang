@@ -1,0 +1,12 @@
+graph SineWave
+{
+	output stream float out;
+
+	let osc = soul::oscillators::Sine(float, 440);
+	let gain = soul::gain::FixedGain(float, 0.3f);
+
+	connection
+	{
+		osc -> gain -> out;
+	}
+}

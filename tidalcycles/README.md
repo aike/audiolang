@@ -3,14 +3,14 @@ TidalCycles
 
 # 概要
 
-https://tidalcycles.org/
+https://tidalcycles.org/  
 https://github.com/tidalcycles/Tidal/
 
-ループパターンを生成するライブコーディング用言語。Haskellの言語内DSLとして実装されている。言語自体にはオーディオエンジンを持っておらず、SuperColliderおよびSuperDirtサンプラーを音源として使用する。
+ループパターンを生成するライブコーディング用言語。Haskellの言語内DSLとして実装されている。言語自体にはオーディオエンジンを持っておらず、SuperColliderおよびSuperDirtサンプラーを音源として使用する。GPL v3.0ライセンス。
 
-ロンドン大学ゴールドスミス・カレッジの大学院生Alex McLeanが2009年に開発。関数型言語による音楽パターン生成は博士論文としてまとめられている( https://slab.org/thesis/ )。
+ロンドン大学ゴールドスミス・カレッジの大学院生Alex McLeanが2009年に開発。関数型言語による音楽パターン生成については博士論文としてまとめられている( https://slab.org/thesis/ )。
 
-もともとTidalという名前であったが、2014年に同名の音楽ストリーミングサイトがサービスインしたためTidalCyclesに改名した。
+もともとTidalという名前であったが、2016年のバージョン0.8からTidalCyclesに改名した。
 
 
 # セットアップ
@@ -56,7 +56,7 @@ Do you want to run the script?([Y]es/[A]ll - yes to all/[N]o/[P]rint): N
 |Atom|多機能テキストエディタ。TidalCyclesのユーザインタフェースとして使用する|
 |SuperCollider|オーディオプログラミング言語およびオーディオエンジンサーバ|
 |sc3plugins|SuperCollider用各種ユニットジェネレータプラグイン|
-|SuperDirt|TidalCycles用サンプラー音源DirtのSuperCollider移植版。以前はDirtを使用していたが現在はSuperDirtが標準|
+|SuperDirt|TidalCycles用音源DirtのSuperCollider移植版。以前はDirtを使用していたが現在はSuperDirtが標準|
 |DirtSamples|Dirt用のサンプリングファイル集|
 
 # 起動
@@ -90,7 +90,7 @@ https://stackoverflow.com/questions/61488500/cabal-install-tidal-ends-with-warni
 > cabal install --lib --package-env . tidal
 ```
 
-上記コマンドを実行すると、以下のような名前で必要なHaskellパッケージを列挙した環境ファイルを作ります。
+上記コマンドを実行すると、以下のような名前で必要なHaskellパッケージを列挙した環境ファイルが生成されます。
 
 .ghc.environment.x86_64-mingw32-8.10.2
 
@@ -172,7 +172,7 @@ d1 $ s "voice" # delaytime 0.4 # delayfeedback 0.5 # delay 0.5
 
 # 感想
 
-TidalCyclesの弱点はなんといっても環境構築の煩雑さです。数年前に比べれば大分楽になりましたが、それでもまだ十分とは言えません。音がうまく鳴らないときに、それの原因がSuperColliderなのかAtomの拡張機能(JavaScript)なのかHaskellなのかcabalやchocoのインストールに原因があるのかを判断して適切に対応する必要があり、広範囲の知識が必要になります。
+TidalCyclesの弱点はなんといっても環境構築の煩雑さです。数年前に比べれば大分楽になりましたが、それでもまだ十分とは言えません。音がうまく鳴らないときに、その原因がSuperColliderなのかAtomの拡張機能(JavaScript)なのかHaskellなのかcabalやchocoのインストールに原因があるのかを判断して適切に対応する必要があり、広範囲の知識が必要になります。
 
 ループパターンを演奏する言語としての設計はユニークで魅力的です。コンピュータサイエンスを学んでプログラミング言語に精通している開発者が作った言語特有の、簡潔さと高い表現力が両立した美しさがあります。これは元の言語のHaskellにも通じる特徴です。
 

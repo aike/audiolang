@@ -1,0 +1,54 @@
+
+processor Delay
+{
+    output stream float out;
+
+    input event
+    {
+        float DelayTime [[ min:0, max:1000, init: 400, step: 1 ]];
+        float Feedback  [[ min:0, max:1, init:0.5, step: 0.01 ]];
+        float WetLevel  [[ min:0, max:1, init:0.5, step: 0.01 ]];
+    }
+
+    event DelayTime(float delayMs)
+    {
+        let delaySamples = max(1, int(processor.frequency * (delayMs / 1000.0f)));
+        readPos = wrap<bufferSize>(writePos - delaySamples);
+    }
+
+    event Feedback(float f) { feedback = f; }
+    event WetLevel(float f) { wetLevel = f; }
+
+    float feedback;
+    float wetLevel;
+
+    let bufferSize = 100000;
+    float[bufferSize] buffer;
+    wrap<bufferSize> readPos, writePos;
+
+	external soul::audio_samples::Mono voice;
+
+    void run()
+    {
+		float64 playPos;
+		float64 addPos = voice.sampleRate / processor.frequency;
+
+        loop
+        {
+			let dry = voice.frames.readLinearInterpolated(playPos);
+            playPos += addPos;
+
+			if (playPos >= voice.frames.size)
+				addPos = 0;
+
+			buffer[writePos] = dry + buffer[readPos] * feedback;
+            out << dry + buffer[readPos] * wetLevel;
+
+			++readPos;
+			++writePos;
+
+            advance();
+        }
+    }
+}
+
