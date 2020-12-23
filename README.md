@@ -18,5 +18,22 @@ Audio Language Examples
 - [Houdini](https://github.com/aike/audiolang/tree/main/houdini)
 - [JavaScript](https://github.com/aike/audiolang/tree/main/javascript)
 - [MATLAB](https://github.com/aike/audiolang/tree/main/matlab)
+- [Max](https://github.com/aike/audiolang/tree/main/max)
+- [mimium](https://github.com/aike/audiolang/tree/main/mimium)
+- [openFrameworks](./of)
+- [Orca](https://github.com/aike/audiolang/tree/main/)
+- [Overtone](https://github.com/aike/audiolang/tree/main/)
+- [Pure Data](https://github.com/aike/audiolang/tree/main/)
+- [Processing](https://github.com/aike/audiolang/tree/main/)
+- [REAKTOR](https://github.com/aike/audiolang/tree/main/)
+- [Scilab](https://github.com/aike/audiolang/tree/main/)
+- [Sonic Pi](https://github.com/aike/audiolang/tree/main/)
+- [SOUL](https://github.com/aike/audiolang/tree/main/)
+- [SuperCollider](https://github.com/aike/audiolang/tree/main/)
+- [TidalCycles](https://github.com/aike/audiolang/tree/main/)
+- [TouchDesigner](https://github.com/aike/audiolang/tree/main/)
+- [vvvv](https://github.com/aike/audiolang/tree/main/)
 
+すべてのソースコードはMITライセンスとします。自由に複製、再利用してください。
+文章については上記ライセンスの対象外なので商用利用等する場合は別途ご連絡ください。
 
