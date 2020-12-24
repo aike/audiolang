@@ -56,7 +56,6 @@ mimiumの関数は前回の戻り値を覚えていてselfで参照できるの�
 
 ```Rust
 // delay fx
-// mimium version >= 0.2.0
 
 voice = "../voice.wav"
 bufsize = loadwavsize(voice)
@@ -97,8 +96,7 @@ fb_delay関数がディレイ本体です。ディレイ用のバッファを別
 
 
 ```Rust
-// delay fx
-// mimium version >= 0.1.5
+// recursive delay fx
 
 voice = "../voice.wav"
 bufsize = loadwavsize(voice)

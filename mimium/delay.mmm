@@ -1,6 +1,4 @@
-
-// delay fx
-// mimium version >= 0.1.5
+// recursive delay fx
 
 voice = "../voice.wav"
 bufsize = loadwavsize(voice)
