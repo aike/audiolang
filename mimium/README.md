@@ -41,7 +41,7 @@ fn sin_osc(freq:float) {
 
 gain = 0.5
 
-fn dsp(time:float)->float {
+fn dsp(time:float) {
     return sin_osc(440) * gain
 }
 ```
