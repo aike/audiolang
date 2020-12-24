@@ -1,21 +1,25 @@
 
+// delay fx
+// mimium version >= 0.1.5
+
 voice = "../voice.wav"
 bufsize = loadwavsize(voice)
 voicebuf = loadwav(voice)
+fr = 44100
+sr = 48000
+speed = fr / sr
 
 delay_time = 0.4
 feedback = 0.5
 num_feedback = 5
 
-fn seek(speed, size) {
-    return if (self < size * 2) self + speed else self
+pos = 0
+
+fn fb_delay(buf, size, delay, ptr, fb) {
+    return if ((fb < 0) || (ptr < 0)) 0 else buf[min(ptr, size - 1)] + fb_delay(buf, size, delay, ptr - delay * fr, fb - 1) * feedback
 }
 
-fn fb_delay(buf, size, delay, pos, fb) {
-    return if ((fb < 0) || (pos < 0)) 0 else buf[min(pos, size - 1)] + fb_delay(buf, size, delay, pos - delay * 48000, fb - 1) * feedback
-}
-
-fn dsp(time)->float {
-    pos = seek(44100 / 48000, bufsize)
+fn dsp(time:float) {
+	pos = pos + speed
     return fb_delay(voicebuf, bufsize, delay_time, pos, num_feedback)
 }

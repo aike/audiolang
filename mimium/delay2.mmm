@@ -1,0 +1,29 @@
+// delay fx
+// mimium version >= 0.2.0
+
+voice = "../voice.wav"
+bufsize = loadwavsize(voice)
+voicebuf = loadwav(voice)
+fr = 44100
+sr = 48000
+speed = fr / sr
+
+delaytime = 0.4
+feedback = 0.5
+wetlevel = 0.5
+
+pos = 0
+
+fn fbdelay(dry:float, time:float, fb:float) {
+    return delay(dry + self * fb, time) 
+}
+
+fn seek(rate:float, size:float){
+    return min(self + rate, bufsize - 1)
+}
+
+fn dsp(time:float) {
+    pos = seek(speed, bufsize)
+    dry = voicebuf[pos]
+    return dry + fbdelay(dry, delaytime * sr, feedback) * wetlevel
+}
