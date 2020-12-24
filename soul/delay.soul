@@ -5,9 +5,9 @@ processor Delay
 
     input event
     {
-        float DelayTime [[ min:0, max:1000, init: 400, step: 1 ]];
-        float Feedback  [[ min:0, max:1, init:0.5, step: 0.01 ]];
-        float WetLevel  [[ min:0, max:1, init:0.5, step: 0.01 ]];
+        float DelayTime [[ min:0, max:1000, init:400, step:1 ]];
+        float Feedback  [[ min:0, max:1, init:0.5, step:0.01 ]];
+        float WetLevel  [[ min:0, max:1, init:0.5, step:0.01 ]];
     }
 
     event DelayTime(float delayMs)

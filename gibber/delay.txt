@@ -1,0 +1,13 @@
+voice = Freesound(213284);
+// the sampling audio is licensed under Creative Commons BY Attribution 3.0 AderuMoro.
+// https://freesound.org/s/213284/
+// https://www.youtube.com/user/AderuMoro
+
+Clock.bpm = 120
+delayTime = ms(400)
+feedbackLength = 0.5
+
+delay = Delay({ time:delayTime, feedback:feedbackLength })
+voice.fx.add(delay)
+
+voice.note(1)

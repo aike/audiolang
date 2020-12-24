@@ -1,0 +1,3 @@
+Sine(440, 0.5)
+
+Sine({ frequency:440, amp:0.5 })

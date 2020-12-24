@@ -42,7 +42,7 @@ processor SineWave
 }
 ```
 
-SOULはソースコードである.soulファイルの他に、マニフェストファイル.soulpatchが必要です。JSON形式のテキストファイルにアプリケーション情報を記述して拡張子.soulpatchで保存します。
+SOULはソースコードである.soulファイルの他に、マニフェストファイル.soulpatchを用意する必要があります。JSON形式のテキストファイルにアプリケーション情報を記述して拡張子.soulpatchで保存します。
 
 ```JavaScript
 {
@@ -61,14 +61,19 @@ SOULはソースコードである.soulファイルの他に、マニフェス�
 }
 ```
 
-コマンドラインから実行します。第2引数で指定するのは.soulpatchのファイル名です。
+コマンドラインから実行します。第2引数で指定するのはsoulpatchファイルです。
 
 ```
-> soul play sine
+> soul play sine.soulpatch
 ```
 
-しかしながら、手元のWindows環境ではパスの\文字をうまく解釈できないようで実行に失敗します。
-配布ファイルに含まれているSOUL_Pluginツールを使うとWindowsでも実行可能です。
+実はsoulpatchファイルがなくても--nopatchオプションをつければsoulファイルを指定して実行することができます。
+
+```
+> soul play sine.soul --nopatch
+```
+
+Webプレイグラウンド( https://soul.dev/lab/ )でも実行可能です。
 
 SOULではGUIを追加するのも簡単です。ソースコードにeventとして入力範囲指定とコールバックを追加するだけでGUIの定義になります。
 
@@ -80,7 +85,7 @@ processor SineWave
 
 	input event
 	{
-		float Gain [[ min:0, max:1,init:0.3, step: 0.01 ]];
+		float Gain [[ min:0, max:1, init:0.3, step:0.01 ]];
 	}
 
 	event Gain(float f) { gain = f; }
@@ -101,9 +106,9 @@ processor SineWave
 }
 ```
 
-SOUL_Pluginツールを使ってsoulpatchファイルを読み込むと、下の画面が表示されGUIから音を操作できるようになります。
+実行すると下の画面が表示されGUIから音を操作できるようになります。
 
-[sine.png](sine.png)
+![sine.png](sine.png)
 
 
 サイン波のオシレータやゲイン処理はライブラリとしても用意されています。それらを使ったプログラムは以下のようになります。graph宣言は、複数のprocessorを部品として扱ってオーディオグラフを構築します。
@@ -140,9 +145,9 @@ processor Delay
 
     input event
     {
-        float DelayTime [[ min:0, max:1000, init: 400, step: 1 ]];
-        float Feedback  [[ min:0, max:1, init:0.5, step: 0.01 ]];
-        float WetLevel  [[ min:0, max:1, init:0.5, step: 0.01 ]];
+        float DelayTime [[ min:0, max:1000, init: 400, step:1 ]];
+        float Feedback  [[ min:0, max:1, init:0.5, step:0.01 ]];
+        float WetLevel  [[ min:0, max:1, init:0.5, step:0.01 ]];
     }
 
     event DelayTime(float delayMs)
@@ -206,13 +211,13 @@ processor Delay
 }
 ```
 
-SOUL_PluginツールのGUIは以下のようになります。
+実行画面は以下のようになります。
 
-[delay.png](delay.png)
+![delay.png](delay.png)
 
 # 感想
 
-Jules Storerが設計しただけあって、モダンでセンスの良い言語という印象です。音の抽象化に独自性があるというより徹底的に現実指向で、現時点におけるオーディオ処理の要件や課題がよく理解していることが伝わってきます。信号処理に便利な構文や機能が多数用意されていて、サンプル単位の処理も比較的シンプルに書くことができます。オーディオエンジンやプラグインの組み込みスクリプトとしても使いやすそうです。
+Jules Storerが設計しただけあって、コンパクトでモダンでセンスの良い言語という印象です。音の抽象化に独自性があるというより徹底的に現実指向で、現時点におけるオーディオ処理の要件や課題をよく理解していることが伝わってきます。信号処理に便利な構文や機能が多数用意されていて、サンプル単位の処理も比較的シンプルに書くことができます。オーディオエンジンやプラグインの組み込みスクリプトとしても使いやすそうです。
 
 このところ勢いのあるROLIということもあり、今後は最重要のオーディオプログラミング言語になると思います。
 
