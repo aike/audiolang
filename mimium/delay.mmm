@@ -5,8 +5,8 @@
 voice = "../voice.wav"
 bufsize = loadwavsize(voice)
 voicebuf = loadwav(voice)
-fr = 44100
-sr = 48000
+fr = 44100 // sample rate of wavfile
+sr = 48000 // sample rate of system
 speed = fr / sr
 
 delay_time = 0.4
